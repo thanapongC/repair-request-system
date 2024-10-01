@@ -1,0 +1,5 @@
+{
+  "/(protected)/maintenance-request/page": "app/(protected)/maintenance-request/page.js",
+  "/(protected)/user-management/page": "app/(protected)/user-management/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
+}

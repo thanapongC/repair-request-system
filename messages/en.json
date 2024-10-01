@@ -1,0 +1,11 @@
+{
+  "Menus": {
+    "menu1": "Dashboard",
+    "menu2": "Barrow Lend System",
+    "menu3": "Maintenance Request",
+    "menu4": "User Management"
+  },
+  "HomePage": {
+    "title": "Hello world!"
+  }
+}
