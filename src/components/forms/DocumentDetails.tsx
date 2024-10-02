@@ -76,6 +76,7 @@ const BorrowingDocument = () => {
             onChange={(e) => setStatus(e.target.value as string)}
             fullWidth
           >
+            <MenuItem value="Borrowed">In Progress</MenuItem>
             <MenuItem value="Borrowed">Borrowed</MenuItem>
             <MenuItem value="Returned">Returned</MenuItem>
             <MenuItem value="Overdue">Overdue</MenuItem>

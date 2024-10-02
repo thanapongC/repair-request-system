@@ -6,6 +6,8 @@ import PageContainer from "@/components/container/PageContainer";
 import DashboardCard from "@/components/shared/DashboardCard";
 import Breadcrumb from "@/components/shared/BreadcrumbCustom";
 import BorrowingDocument from "@/components/forms/DocumentDetails";
+import BorrowerInformation from "@/components/forms/BorrowerInformation";
+import BorrowedEquipmentList from "@/components/forms/NewBorrowedEquipment";
 
 const BorrowingPage = () => {
   return (
@@ -42,7 +44,7 @@ const BorrowingPage = () => {
               >
                 Insert Your Borrower Details
               </Typography>
-              {/* <UserAuthenForm /> */}
+              <BorrowerInformation />
             </Paper>
           </Grid>
           <Grid item xs={12}>
@@ -53,10 +55,10 @@ const BorrowingPage = () => {
               <Typography variant="body2" color="text.secondary" gutterBottom>
                 To change your personal detail, edit and save from here
               </Typography>
-              {/* <PersonalDetailsForm /> */}
+              <BorrowedEquipmentList />
               <Box sx={{ mt: 3, display: "flex", justifyContent: "flex-end" }}>
                 <Button variant="contained" color="primary" sx={{ mr: 1 }}>
-                  Add User
+                  Add Document
                 </Button>
                 <Button variant="outlined">Cancel</Button>
               </Box>
