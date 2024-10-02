@@ -3,10 +3,12 @@ import Link from "next/link";
 import { Grid, Box, Card, Stack, Typography } from "@mui/material";
 // components
 import PageContainer from "@/components/container/PageContainer";
-import Logo from "@/components/layout/shared/logo/Logo";
+import Logo from "@/components/shared/Logo";
 import AuthLogin from "@/components/auth/authLogin";
+import { useLocale } from "next-intl";
 
 const Login = () => {
+  const localeActive = useLocale();
   return (
     <PageContainer title="Login" description="this is Login page">
       <Box
@@ -48,6 +50,7 @@ const Login = () => {
                 <Logo />
               </Box>
               <AuthLogin
+              successPath={`/${localeActive}/dashboard`}
                 subtext={
                   <Typography
                     variant="subtitle1"

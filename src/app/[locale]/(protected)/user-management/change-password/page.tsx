@@ -17,9 +17,9 @@ import {
   Box,
 } from "@mui/material";
 import PageContainer from "@/components/container/PageContainer";
-import Breadcrumb from "@/components/shared/breadcrumb";
+import Breadcrumb from "@/components/shared/Breadcrumb";
 import DashboardCard from "@/components/shared/BaseCard";
-import ChangePasswordForm from "@/components/forms/changePasswordForm";
+import ChangePasswordForm from "@/components/forms/ChangePasswordForm";
 
 const ChangePasswordPage: NextPage = () => {
   return (

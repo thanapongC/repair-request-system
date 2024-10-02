@@ -3,20 +3,25 @@
 import { Grid, Box } from "@mui/material";
 import PageContainer from "@/components/container/PageContainer";
 import {useTranslations} from 'next-intl';
+import Breadcrumb from "@/components/shared/Breadcrumb";
+import MaintenanceTable from "./table";
 
-const Dashboard = () => {
+const BorrowPage = () => {
   
   const t = useTranslations("HomePage");
 
   return (
     <PageContainer title="Dashboard" description="this is Dashboard">
+      <Breadcrumb/>
       <Box mt={3}>
         <Grid container spacing={3}>
-          <h1>{t("title")}</h1>;
+          <Grid item xs={12} lg={12}>
+            <MaintenanceTable />
+          </Grid>
         </Grid>
       </Box>
     </PageContainer>
   );
 };
 
-export default Dashboard;
+export default BorrowPage;

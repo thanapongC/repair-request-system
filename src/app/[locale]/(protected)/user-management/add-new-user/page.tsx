@@ -1,30 +1,15 @@
 "use client";
-
-import React from "react";
-import { NextPage } from "next";
-import {
-  Container,
-  Typography,
-  Paper,
-  Grid,
-  TextField,
-  Button,
-  Avatar,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Box,
-} from "@mui/material";
+import { Grid, Box, Button, Typography, Paper } from "@mui/material";
 import PageContainer from "@/components/container/PageContainer";
-import DashboardCard from "@/components/shared/BaseCard";
-import Breadcrumb from "@/components/shared/breadcrumb";
-import ProfileImageUpload from "@/components/forms/profileImage";
-import ChangePasswordForm from "@/components/forms/changePasswordForm";
-import PersonalDetailsForm from "@/components/forms/personalDetailForm";
-import UserAuthenForm from "@/components/forms/userAuthenForm";
 
-const AccountSettings: NextPage = () => {
+// components
+import DashboardCard from "@/components/shared/DashboardCard";
+import PersonalDetailsForm from "@/components/forms/PersonalDetailForm";
+import UserAuthenForm from "@/components/forms/UserAuthenForm";
+import ProfileImageUpload from "@/components/forms/ProfileImage";
+import Breadcrumb from "@/components/shared/Breadcrumb";
+
+const Dashboard = () => {
   return (
     <PageContainer>
       <Breadcrumb />
@@ -72,7 +57,7 @@ const AccountSettings: NextPage = () => {
               <PersonalDetailsForm />
               <Box sx={{ mt: 3, display: "flex", justifyContent: "flex-end" }}>
                 <Button variant="contained" color="primary" sx={{ mr: 1 }}>
-                  Update
+                  Add User
                 </Button>
                 <Button variant="outlined">Cancel</Button>
               </Box>
@@ -86,4 +71,4 @@ const AccountSettings: NextPage = () => {
   );
 };
 
-export default AccountSettings;
+export default Dashboard;

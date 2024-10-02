@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import {
   Typography,
   Box,
@@ -12,6 +14,9 @@ import {
   IconButton,
   Button,
   Grid,
+  Alert,
+  Avatar,
+  Pagination,
 } from "@mui/material";
 import BaseCard from "@/components/shared/BaseCard";
 import {
@@ -21,21 +26,45 @@ import {
   Print,
   RemoveCircle,
 } from "@mui/icons-material";
-import Link from "next/link";
 import { useDatabaseContext, UserManagement } from "@/contexts/dbContext";
-import { formatNumber, formatUtcDate, makeDateMonth } from "@/utils/utils";
-import StatusChip from "@/components/shared/statusChip";
+import StatusChip from "@/components/shared/StatusChip";
 import { useRouter } from "next/navigation";
-import ConfirmDelete from "@/components/shared/confirmDialog";
+import ConfirmDelete from "@/components/shared/ConfirmDialog";
+import SearchForm from "@/components/shared/SearchForm";
+import StatusAlert from "@/components/shared/StatusAlert";
+import PaginationComponent from "@/components/shared/Pagination";
 
-interface ProductTableProps {
+interface BorrowTableProps {
   data?: UserManagement[];
 }
 
-const ProductServiceTable: React.FC<ProductTableProps> = () => {
+const BorrowTable: React.FC<BorrowTableProps> = () => {
   const { userState } = useDatabaseContext();
 
   const router = useRouter();
+
+  const totalItems = 100; // Define the total number of items
+  const [currentItems, setCurrentItems] = useState<string[]>([]);
+
+  // Handle page change by updating the current items to display
+  const handlePageChange = (
+    items: string[],    // This is the array of paginated items
+    currentPage: number, 
+    itemsPerPage: number
+  ) => {
+    console.log(`Current Page: ${currentPage}, Items Per Page: ${itemsPerPage}`);
+    setCurrentItems(items); // Update the displayed items
+  };
+
+  const [alertStatus, setAlertStatus] = useState<{
+    status: "success" | "error" | "info" | "warning";
+    message: string;
+    show: boolean;
+  }>({
+    status: "error",
+    message: "create insert update delete success",
+    show: true,
+  });
 
   const handleDeleteItem = () => {
     console.log("Item deleted");
@@ -63,18 +92,9 @@ const ProductServiceTable: React.FC<ProductTableProps> = () => {
         }}
       >
         <Grid container>
-          <Grid container item xs={6}>
-            <Link href={"/user-management/add-new-user"}>
-              <Button
-                variant="contained"
-                color="warning"
-                sx={{ marginBottom: "5px" }}
-              >
-                Add User
-              </Button>
-            </Link>
+          <Grid container item xs={12}>
+            <SearchForm />
           </Grid>
-          <Grid container item xs={6} justifyContent="flex-end"></Grid>
         </Grid>
 
         <Table
@@ -86,11 +106,7 @@ const ProductServiceTable: React.FC<ProductTableProps> = () => {
         >
           <TableHead>
             <TableRow>
-              <TableCell>
-                <Typography color="textSecondary" variant="h6">
-                  Id
-                </Typography>
-              </TableCell>
+              <TableCell></TableCell>
               <TableCell>
                 <Typography color="textSecondary" variant="h6">
                   Employee Name
@@ -122,9 +138,7 @@ const ProductServiceTable: React.FC<ProductTableProps> = () => {
             {userState.map((data, index) => (
               <TableRow key={index}>
                 <TableCell>
-                  <Typography fontSize="15px" fontWeight={500}>
-                    {index + 1}
-                  </Typography>
+                  <Avatar />
                 </TableCell>
                 <TableCell>
                   <Box display="flex" alignItems="center">
@@ -142,7 +156,9 @@ const ProductServiceTable: React.FC<ProductTableProps> = () => {
                   </Box>
                 </TableCell>
                 <TableCell>
-                  <StatusChip status={data.status} />
+                  <Typography color="textSecondary" variant="h6">
+                    {data.roleId}
+                  </Typography>
                 </TableCell>
                 <TableCell>
                   <StatusChip status={data.status} />
@@ -173,9 +189,20 @@ const ProductServiceTable: React.FC<ProductTableProps> = () => {
             ))}
           </TableBody>
         </Table>
+        <PaginationComponent
+           totalItems={totalItems}
+           itemsPerPageOptions={[5, 10, 20]} // Optional, defaults to [5, 10, 20]
+           onPageChange={handlePageChange}   // This handles page changes
+        />
+        <StatusAlert
+          status={alertStatus.status}
+          message={alertStatus.message}
+          show={alertStatus.show}
+          onClose={() => setAlertStatus((prev) => ({ ...prev, show: false }))}
+        />
       </TableContainer>
     </BaseCard>
   );
 };
 
-export default ProductServiceTable;
+export default BorrowTable;
