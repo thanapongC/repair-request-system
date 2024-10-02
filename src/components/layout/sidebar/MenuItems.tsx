@@ -33,17 +33,17 @@ export const useMenuItems = () => {
       id: uniqueId(),
       title: t("menu2"),
       icon: IconHome,
-      href: `/${localActive}/borrow-lend-system`,
+      href: `/${localActive}/borrowing-system`,
       children: [
         {
           id: uniqueId(),
           title: t("menu2-1"),
-          href: `/${localActive}/borrow-lend-system`,
+          href: `/${localActive}/borrowing-system`,
         },
         {
           id: uniqueId(),
           title: t("menu2-2"),
-          href: `/${localActive}/borrow-lend-system/add-borrow-document`,
+          href: `/${localActive}/borrowing-system/add-borrow-document`,
         },
       ],
     },
