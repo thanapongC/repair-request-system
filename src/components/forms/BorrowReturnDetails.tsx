@@ -58,7 +58,7 @@ const BorrowReturnDetails = () => {
           />
         </Grid>
 
-        {/* Return Status */}
+        {/* Return Status
         <Grid item xs={6}>
           <Select
             label="Return Status"
@@ -70,7 +70,7 @@ const BorrowReturnDetails = () => {
             <MenuItem value="Returned Partially">Returned Partially</MenuItem>
             <MenuItem value="Damaged">Damaged</MenuItem>
           </Select>
-        </Grid>
+        </Grid> */}
 
         {/* Remarks */}
         <Grid item xs={12}>
@@ -84,12 +84,6 @@ const BorrowReturnDetails = () => {
           />
         </Grid>
 
-        {/* Submit Button */}
-        <Grid item xs={12}>
-          <Button variant="contained" color="primary" onClick={handleFormSubmit}>
-            Submit
-          </Button>
-        </Grid>
       </Grid>
     </Box>
   );

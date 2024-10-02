@@ -11,14 +11,14 @@ const BorrowerInformation = () => {
   // State to manage form input
   const [borrowerName, setBorrowerName] = useState("");
   const [borrowerId, setBorrowerId] = useState("");
-  const [contactInfo, setContactInfo] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
 
   // Handle form submission
   const handleFormSubmit = () => {
     const formData = {
       borrowerName,
       borrowerId,
-      contactInfo,
+      contactEmail,
     };
     console.log("Borrower Information:", formData);
   };
@@ -53,9 +53,9 @@ const BorrowerInformation = () => {
         {/* Contact Information */}
         <Grid item xs={12}>
           <TextField
-            label="Contact Information"
-            value={contactInfo}
-            onChange={(e) => setContactInfo(e.target.value)}
+            label="Contact Email"
+            value={contactEmail}
+            onChange={(e) => setContactEmail(e.target.value)}
             fullWidth
           />
         </Grid>

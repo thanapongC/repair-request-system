@@ -72,7 +72,7 @@ const BorrowingDocumentTable: React.FC = () => {
   };
 
   const handleEdit = (keyId: string) => {
-    router.push(`/user-management/edit-profile`);
+    router.push(`/borrowing-system/returning/B001`);
     // router.push(`/user-management/edit-profile/${keyId}`)
   };
   // Example data for the borrowing document

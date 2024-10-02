@@ -45,6 +45,7 @@ const initialData: Equipment[] = [
   },
 ];
 
+
 const EquipmentTable: React.FC = () => {
   const [equipments, setEquipments] = useState<Equipment[]>(initialData);
 
@@ -83,7 +84,7 @@ const EquipmentTable: React.FC = () => {
                 <TableCell>{equipment.equipmentId}</TableCell>
                 <TableCell>{equipment.equipmentName}</TableCell>
                 <TableCell>{equipment.quantity}</TableCell>
-                {/* <TableCell>
+                <TableCell>
                   <Select
                     value={equipment.status}
                     onChange={(e) => handleStatusChange(index, e.target.value)}
@@ -92,7 +93,7 @@ const EquipmentTable: React.FC = () => {
                     <MenuItem value="Under Maintenance">Under Maintenance</MenuItem>
                     <MenuItem value="Returned">Returned</MenuItem>
                   </Select>
-                </TableCell> */}
+                </TableCell>
                 <TableCell>{equipment.rentalPricePerDay}</TableCell>
                 <TableCell>{equipment.rentalDays}</TableCell>
                 <TableCell>{equipment.totalPrice}</TableCell>
