@@ -64,6 +64,9 @@ const BorrowingPage = () => {
                 <Button variant="contained" color="primary" sx={{ mr: 1 }}>
                   Add Document
                 </Button>
+                <Button variant="contained" color="secondary" sx={{ mr: 1 }}>
+                  Add & Download Document 
+                </Button>
                 <Button variant="outlined">Cancel</Button>
               </Box>
             </Paper>
