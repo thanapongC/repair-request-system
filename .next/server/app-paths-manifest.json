@@ -1,5 +1,7 @@
 {
-  "/(protected)/maintenance-request/page": "app/(protected)/maintenance-request/page.js",
-  "/(protected)/user-management/page": "app/(protected)/user-management/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/[locale]/(protected)/borrow-lend-system/add-borrow-document/page": "app/[locale]/(protected)/borrow-lend-system/add-borrow-document/page.js",
+  "/[locale]/(protected)/user-management/add-new-user/page": "app/[locale]/(protected)/user-management/add-new-user/page.js",
+  "/[locale]/(protected)/maintenance-request/page": "app/[locale]/(protected)/maintenance-request/page.js",
+  "/[locale]/(protected)/dashboard/page": "app/[locale]/(protected)/dashboard/page.js"
 }

@@ -51,13 +51,13 @@ const PersonalDetailsForm: React.FC<PersonalDetailsFormProps> = ({
             fullWidth
             label="Name"
             variant="outlined"
-            defaultValue="Mathew"
+            defaultValue="Mathew Anderson"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
             fullWidth
-            label="Sername"
+            label="Company"
             variant="outlined"
             defaultValue="Anderson"
           />
@@ -83,7 +83,7 @@ const PersonalDetailsForm: React.FC<PersonalDetailsFormProps> = ({
             fullWidth
             label="Department"
             variant="outlined"
-            defaultValue="Nones"
+            defaultValue="Engineering"
           />
         </Grid>
         <Grid item xs={12} sm={6}>

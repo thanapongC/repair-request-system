@@ -8,7 +8,7 @@ import {
   DialogTitle,
   IconButton,
 } from "@mui/material";
-import { RemoveCircle } from "@mui/icons-material";
+import { Delete, RemoveCircle } from "@mui/icons-material";
 
 interface ConfirmDeleteProps {
   itemName: string; // Name of the item to be deleted
@@ -40,7 +40,7 @@ const ConfirmDelete: React.FC<ConfirmDeleteProps> = ({
   return (
     <>
       <IconButton size="small" color="error" onClick={handleClickOpen}>
-        <RemoveCircle />
+        <Delete />
       </IconButton>
       {/* <Button variant="contained" color="secondary" onClick={handleClickOpen}>
         Delete {itemName}

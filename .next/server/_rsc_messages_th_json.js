@@ -17,7 +17,7 @@ exports.modules = {
   \**************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"Menus":{"dashboard":"เเผงควบคุม"},"HomePage":{"title":"สวัสดีครับ!"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"Menus":{"menu1":"เเผงควบคุม","menu2":"ระบบยืม-คืนพัสดุ","menu3":"ระบบเเจ้งซ่อม","menu4":"จัดการผู้ใช้"},"HomePage":{"title":"สวัสดีครับ!"}}');
 
 /***/ })
 

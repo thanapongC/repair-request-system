@@ -13,34 +13,72 @@ import {
 } from "@tabler/icons-react";
 
 import { uniqueId } from "lodash";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export const useMenuItems = () => {
   const t = useTranslations("Menus");
+  const localActive = useLocale();
+
   return [
     {
       id: uniqueId(),
-      title: t('menu1'),
+      title: t("menu1"),
       icon: IconHome,
-      href: "/dashboard",
+      href: `/${localActive}/dashboard`,
     },
     {
       id: uniqueId(),
-      title: t('menu2'),
+      title: t("menu2"),
       icon: IconHome,
-      href: "/barrow-lend-system",
+      href: `/${localActive}/borrow-lend-system`,
+      children: [
+        {
+          id: uniqueId(),
+          title: t("menu2-1"),
+          href: `/${localActive}/borrow-lend-system`,
+        },
+        {
+          id: uniqueId(),
+          title: t("menu2-2"),
+          href: `/${localActive}/borrow-lend-system/add-borrow-document`,
+        },
+      ],
     },
     {
       id: uniqueId(),
-      title: t('menu3'),
+      title: t("menu3"),
       icon: IconHome,
-      href: "/maintenance-request",
+      href: `/${localActive}/maintenance-request`,
+      children: [
+        {
+          id: uniqueId(),
+          title: t("menu3-1"),
+          href: `/${localActive}/maintenance-request`,
+        },
+        {
+          id: uniqueId(),
+          title: t("menu3-2"),
+          href: `/${localActive}/maintenance-request/add-maintenance-request`,
+        },
+      ],
     },
     {
       id: uniqueId(),
-      title: t('menu4'),
+      title: t("menu4"),
       icon: IconHome,
-      href: "/user-management",
+      href: `/${localActive}/user-management`,
+      children: [
+        {
+          id: uniqueId(),
+          title: t("menu4-1"),
+          href: `/${localActive}/user-management`,
+        },
+        {
+          id: uniqueId(),
+          title: t("menu4-2"),
+          href: `/${localActive}/user-management/add-new-user`,
+        },
+      ],
     },
   ];
 };

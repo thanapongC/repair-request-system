@@ -17,7 +17,7 @@ exports.modules = {
   \**************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"Menus":{"menu1":"Dashboard","menu2":"Barrow Lend System","menu3":"Maintenance Request","menu4":"User Management"},"HomePage":{"title":"Hello world!"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"Menus":{"menu1":"Dashboard","menu2":"Borrowing-Lending","menu2-1":"All Documents","menu2-2":"Add Borrowing Document","menu3":"Maintenance Request","menu3-1":"All Request","menu3-2":"Add Request","menu4":"User Management","menu4-1":"All Users","menu4-2":"Add Users"},"HomePage":{"title":"Hello world!"}}');
 
 /***/ })
 

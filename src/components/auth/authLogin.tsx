@@ -17,9 +17,10 @@ interface loginType {
   title?: string;
   subtitle?: JSX.Element | JSX.Element[];
   subtext?: JSX.Element | JSX.Element[];
+  successPath?: string;
 }
 
-const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
+const AuthLogin = ({ title, subtitle, subtext, successPath }: loginType) => (
   <>
     {title ? (
       <Typography fontWeight="700" variant="h2" mb={1}>
@@ -66,7 +67,7 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
             label="Remeber this Device"
           />
         </FormGroup>
-        <Typography
+        {/* <Typography
           component={Link}
           href="/"
           fontWeight="500"
@@ -76,7 +77,7 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
           }}
         >
           Forgot Password ?
-        </Typography>
+        </Typography> */}
       </Stack>
     </Stack>
     <Box>
@@ -86,7 +87,7 @@ const AuthLogin = ({ title, subtitle, subtext }: loginType) => (
         size="large"
         fullWidth
         component={Link}
-        href="/"
+        href={successPath ? successPath : '/'}
         type="submit"
       >
         Sign In

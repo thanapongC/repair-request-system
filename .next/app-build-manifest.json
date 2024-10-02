@@ -1,14 +1,14 @@
 {
   "pages": {
-    "/(protected)/user-management/page": [
+    "/[locale]/(protected)/borrow-lend-system/add-borrow-document/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(protected)/user-management/page.js"
+      "static/chunks/app/[locale]/(protected)/borrow-lend-system/add-borrow-document/page.js"
     ],
-    "/(protected)/layout": [
+    "/[locale]/(protected)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(protected)/layout.js"
+      "static/chunks/app/[locale]/(protected)/layout.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -21,10 +21,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/(protected)/maintenance-request/page": [
+    "/[locale]/(protected)/user-management/add-new-user/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(protected)/maintenance-request/page.js"
+      "static/chunks/app/[locale]/(protected)/user-management/add-new-user/page.js"
+    ],
+    "/[locale]/(protected)/maintenance-request/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/(protected)/maintenance-request/page.js"
+    ],
+    "/[locale]/(protected)/dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[locale]/(protected)/dashboard/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

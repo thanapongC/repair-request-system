@@ -1,5 +1,5 @@
 
-import { Product } from "@/contexts/productServiceListContext";
+// import { Product } from "@/contexts/productServiceListContext";
 
 // Function to calculate Tax
 export const calculateTax = (totalPrice: number, vatRate: number, withholdingTaxPercent: number): { vatAmount: number; totalWithVAT: number; withholdingTaxAmount: number; totalAfterWithholdingTax: number } => {
@@ -30,26 +30,26 @@ export const calculateTax = (totalPrice: number, vatRate: number, withholdingTax
     };
 }
 
-export const calculateFooterTotals = (products: Product[]): { totalPrice: number; totalDiscount: number; priceAfterDiscount: number } => {
+// export const calculateFooterTotals = (products: Product[]): { totalPrice: number; totalDiscount: number; priceAfterDiscount: number } => {
 
-    // คำนวณผลรวมสำหรับ product
-    let totalPrice: number = 0;
-    let totalDiscount: number = 0;
+//     // คำนวณผลรวมสำหรับ product
+//     let totalPrice: number = 0;
+//     let totalDiscount: number = 0;
 
-    products.map((product) => {
-        totalPrice += product.totalPrice;
-        totalDiscount += product.totalDiscount;
-    });
+//     products.map((product) => {
+//         totalPrice += product.totalPrice;
+//         totalDiscount += product.totalDiscount;
+//     });
 
-    let priceAfterDiscount = totalPrice - totalDiscount;
+//     let priceAfterDiscount = totalPrice - totalDiscount;
 
-    return {
-        totalPrice,
-        totalDiscount,
-        priceAfterDiscount
-    }
+//     return {
+//         totalPrice,
+//         totalDiscount,
+//         priceAfterDiscount
+//     }
 
-};
+// };
 
 
 export function formatUtcDate(utcDateString?: string | null): string | null | undefined {
@@ -95,33 +95,33 @@ export function formatNumber(number: number | null | undefined, needDecimal: boo
 }
 
 // ฟังก์ชันหา max productServiceNumber
-export const findMaxProductServiceNumber = (productList: Product[]): number => {
-    const maxNumber = productList.reduce((max, product) => {
-        const productNumber = product.productServiceNumber;
-        return productNumber > max ? productNumber : max;
-    }, 0);
+// export const findMaxProductServiceNumber = (productList: Product[]): number => {
+//     const maxNumber = productList.reduce((max, product) => {
+//         const productNumber = product.productServiceNumber;
+//         return productNumber > max ? productNumber : max;
+//     }, 0);
 
-    return maxNumber === 0 ? 0 : maxNumber;
-};
+//     return maxNumber === 0 ? 0 : maxNumber;
+// };
 
 
 // ฟังก์ชันหาค่า max ของ subProductServiceNumber
-export const findMaxSubProductServiceNumber = (productList: Product[], productServiceNumber: number): number | null => {
-    // หา product ที่ตรงกับ productServiceNumber
-    const product = productList.find(
-        (p) => p.productServiceNumber === productServiceNumber
-    );
+// export const findMaxSubProductServiceNumber = (productList: Product[], productServiceNumber: number): number | null => {
+//     // หา product ที่ตรงกับ productServiceNumber
+//     const product = productList.find(
+//         (p) => p.productServiceNumber === productServiceNumber
+//     );
     
-    if (!product || product.subProductList.length === 0) {
-        return null; // กรณีไม่มี product หรือไม่มี subProduct ใน product นี้
-    }
+//     if (!product || product.subProductList.length === 0) {
+//         return null; // กรณีไม่มี product หรือไม่มี subProduct ใน product นี้
+//     }
 
-    // หา max subProductServiceNumber ใน subProductList
-    const maxSubProductServiceNumber = product.subProductList.reduce((max, subProduct) => {
-        const subProductNumber = subProduct.subProductServiceNumber;
-        return subProductNumber > max ? subProductNumber : max;
-    }, 0);
+//     // หา max subProductServiceNumber ใน subProductList
+//     const maxSubProductServiceNumber = product.subProductList.reduce((max, subProduct) => {
+//         const subProductNumber = subProduct.subProductServiceNumber;
+//         return subProductNumber > max ? subProductNumber : max;
+//     }, 0);
 
-    return maxSubProductServiceNumber;
-};
+//     return maxSubProductServiceNumber;
+// };
 

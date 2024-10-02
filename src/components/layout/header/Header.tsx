@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import Profile from './Profile';
 import Search from './Search';
 import {IconMenu2 } from '@tabler/icons-react';
+import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 
 interface ItemType {
   toggleMobileSidebar?:  (event: React.MouseEvent<HTMLElement>) => void ;
@@ -50,10 +51,11 @@ const Header = ({toggleMobileSidebar}: ItemType) => {
           <IconMenu2 width="20" height="20" />
         </IconButton> */}
 
-        <Search/>
+        {/* <Search/> */}
          
         <Box flexGrow={1} />
         <Stack spacing={1} direction="row" alignItems="center">
+          <LanguageSwitcher/>
           <Profile />
         </Stack>
       </ToolbarStyled>

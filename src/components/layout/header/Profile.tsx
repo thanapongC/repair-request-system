@@ -22,14 +22,28 @@ import {
   IconMail,
   IconShield,
 } from "@tabler/icons-react";
+import ProfileFormDialog from "@/components/shared/ProfileDialog";
+import { useTranslations, useLocale } from "next-intl";
 
 const Profile = () => {
+
+  const localeActive = useLocale();
+
   const [anchorEl2, setAnchorEl2] = useState(null);
+  const [isProfileDialogOpen, setIsProfileDialogOpen] = useState(false);
   const handleClick2 = (event: any) => {
     setAnchorEl2(event.currentTarget);
   };
   const handleClose2 = () => {
     setAnchorEl2(null);
+  };
+
+  const handleOpenProfileDialog = () => {
+    setIsProfileDialogOpen(true);
+  };
+
+  const handleCloseProfileDialog = () => {
+    setIsProfileDialogOpen(false);
   };
 
   const theme = useTheme();
@@ -67,6 +81,17 @@ const Profile = () => {
       lightcolor: errorlight,
     },
   ];
+
+  const profileData = {
+    name: 'Mathew Anderson',
+    company: 'Anderson',
+    department: 'India',
+    position: 'INR',
+    email: 'info@modernize.com',
+    phone: '+91 12345 65478',
+    address: '814 Howard Street, 120065, India',
+    avatarUrl: '/path-to-your-image.jpg',
+  };
 
   return (
     <Box>
@@ -142,12 +167,14 @@ const Profile = () => {
       >
 
         <Box pt={0}>
-
           <List>
-            <ListItemButton component="a" href="/user-management/edit-profile/">
+          <ListItemButton component="a" onClick={handleOpenProfileDialog}>
+              <ListItemText primary="View Profile" />
+            </ListItemButton>
+            <ListItemButton component="a" href={`/${localeActive}/user-management/edit-profile/`}>
               <ListItemText primary="Edit Profile" />
             </ListItemButton>
-            <ListItemButton component="a" href="/user-management/change-password">
+            <ListItemButton component="a" href={`/${localeActive}/user-management/change-password`}>
               <ListItemText primary="Change Password" />
             </ListItemButton>
           </List>
@@ -155,12 +182,17 @@ const Profile = () => {
         </Box>
         <Divider />
         <Box mt={2}>
-          <Button fullWidth variant="contained" color="primary">
+          <Button fullWidth variant="contained" color="primary" href={`/${localeActive}/sign-in`}>
             Logout
           </Button>
         </Box>
 
       </Menu>
+      <ProfileFormDialog
+        open={isProfileDialogOpen}
+        onClose={handleCloseProfileDialog}
+        profileData={profileData}
+      />
     </Box>
   );
 };

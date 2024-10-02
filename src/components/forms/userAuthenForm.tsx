@@ -24,8 +24,8 @@ const roles = ["Admin", "User", "Guest"]; // Example roles
 
 const UserAuthenForm: React.FC<RegistrationFormProps> = ({ onSubmit }) => {
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("Test@testmail.co.th");
+  const [password, setPassword] = useState("123456789");
   const [role, setRole] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
