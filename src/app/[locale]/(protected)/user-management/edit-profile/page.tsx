@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import PageContainer from "@/components/container/PageContainer";
 import DashboardCard from "@/components/shared/BaseCard";
-import Breadcrumb from "@/components/shared/Breadcrumb";
+import Breadcrumb from "@/components/shared/BreadcrumbCustom";
 import ProfileImageUpload from "@/components/forms/ProfileImage";
 import ChangePasswordForm from "@/components/forms/ChangePasswordForm";
 import PersonalDetailsForm from "@/components/forms/PersonalDetailForm";

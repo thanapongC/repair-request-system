@@ -7,7 +7,7 @@ import DashboardCard from "@/components/shared/DashboardCard";
 import PersonalDetailsForm from "@/components/forms/PersonalDetailForm";
 import UserAuthenForm from "@/components/forms/UserAuthenForm";
 import ProfileImageUpload from "@/components/forms/ProfileImage";
-import Breadcrumb from "@/components/shared/Breadcrumb";
+import Breadcrumb from "@/components/shared/BreadcrumbCustom";
 
 const Dashboard = () => {
   return (

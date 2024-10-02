@@ -17,7 +17,7 @@ import {
   Box,
 } from "@mui/material";
 import PageContainer from "@/components/container/PageContainer";
-import Breadcrumb from "@/components/shared/Breadcrumb";
+import Breadcrumb from "@/components/shared/BreadcrumbCustom";
 import DashboardCard from "@/components/shared/BaseCard";
 import ChangePasswordForm from "@/components/forms/ChangePasswordForm";
 

@@ -3,7 +3,7 @@
 import { Grid, Box } from "@mui/material";
 import PageContainer from "@/components/container/PageContainer";
 import {useTranslations} from 'next-intl';
-import Breadcrumb from "@/components/shared/Breadcrumb";
+import Breadcrumb from "@/components/shared/BreadcrumbCustom";
 import MaintenanceTable from "./table";
 
 const BorrowPage = () => {

@@ -5,7 +5,7 @@ import PageContainer from "@/components/container/PageContainer";
 //component
 import ProductServiceTable from "./table";
 import BaseCard from "@/components/shared/BaseCard";
-import Breadcrumb from "@/components/shared/Breadcrumb";
+import Breadcrumb from "@/components/shared/BreadcrumbCustom";
 
 const UserManagement = () => {
 

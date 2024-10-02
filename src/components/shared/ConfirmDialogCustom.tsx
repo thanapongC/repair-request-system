@@ -42,9 +42,6 @@ const ConfirmDelete: React.FC<ConfirmDeleteProps> = ({
       <IconButton size="small" color="error" onClick={handleClickOpen}>
         <Delete />
       </IconButton>
-      {/* <Button variant="contained" color="secondary" onClick={handleClickOpen}>
-        Delete {itemName}
-      </Button> */}
       <Dialog
         open={open}
         onClose={handleClose}

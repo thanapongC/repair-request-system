@@ -27,9 +27,9 @@ import {
   RemoveCircle,
 } from "@mui/icons-material";
 import { useDatabaseContext, UserManagement } from "@/contexts/dbContext";
-import StatusChip from "@/components/shared/StatusChip";
+import StatusChip from "@/components/shared/StatusChipCustom";
 import { useRouter } from "next/navigation";
-import ConfirmDelete from "@/components/shared/ConfirmDialog";
+import ConfirmDelete from "@/components/shared/ConfirmDialogCustom";
 import SearchForm from "@/components/shared/SearchForm";
 import StatusAlert from "@/components/shared/StatusAlert";
 import PaginationComponent from "@/components/shared/Pagination";
