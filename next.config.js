@@ -5,13 +5,17 @@
 
 // module.exports = nextConfig
 
-const createNextIntlPlugin = require('next-intl/plugin');
+// const createNextIntlPlugin = require('next-intl/plugin');
 
-const withNextIntl = createNextIntlPlugin();
+// const withNextIntl = createNextIntlPlugin();
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {};
 
-module.exports = withNextIntl(nextConfig);
+// module.exports = withNextIntl(nextConfig);
+
+const withNextIntl = require('next-intl/plugin')();
+
+module.exports = withNextIntl();
 
 

@@ -4,6 +4,7 @@ import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { Box, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { useState, useTransition } from 'react';
+// import {useRouter} from '@/i18n/routing';
 
 
 // Define your available locales
@@ -31,9 +32,7 @@ const LanguageSwitcher: React.FC = () => {
       router.push(newUrl);
       router.refresh()
     });
-    
-    // router.push(newUrl);
-    // router.refresh()
+
   };
 
   return (
@@ -57,3 +56,20 @@ const LanguageSwitcher: React.FC = () => {
 };
 
 export default LanguageSwitcher;
+
+
+
+// import Link from 'next/link';
+// import {useLocale, useTranslations} from 'next-intl';
+
+// export default function LocaleSwitcher() {
+//   const t = useTranslations('LocaleSwitcher');
+//   const locale = useLocale();
+//   const otherLocale = locale === 'en' ? 'de' : 'en';
+
+//   return (
+//     <Link href={'/' + otherLocale} prefetch={false}>
+//       {t('switchLocale', {locale: otherLocale})}
+//     </Link>
+//   );
+// }

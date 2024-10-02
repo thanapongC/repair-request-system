@@ -1,11 +1,9 @@
-// app/middleware.ts
 import createMiddleware from 'next-intl/middleware';
+import {routing} from './i18n/routing';
 
-export default createMiddleware({
-  locales: ['en', 'th'], // Add your supported locales here
-  defaultLocale: 'en',
-});
+export default createMiddleware(routing);
 
 export const config = {
-  matcher: ['/((?!api|_next|favicon.ico).*)'], // Adjust this matcher if needed
+  // Skip all paths that should not be internationalized
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };

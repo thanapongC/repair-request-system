@@ -10,6 +10,8 @@ import { Prompt } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 
+export const dynamic = 'force-dynamic';
+
 const prompt = Prompt({
   subsets: ["thai", "latin"], // Specify subsets if needed
   weight: ["400", "700"], // Specify the font weights you need
@@ -28,9 +30,11 @@ export default async function RootLayout({
       <body className={prompt.className}>
         <ThemeProvider theme={baselightTheme}>
           <CssBaseline />
+          <DatabaseProvider>
           <NextIntlClientProvider messages={messages}>
-            <DatabaseProvider>{children}</DatabaseProvider>
+            {children}
           </NextIntlClientProvider>
+          </DatabaseProvider>
         </ThemeProvider>
       </body>
     </html>

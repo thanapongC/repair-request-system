@@ -39,4 +39,4 @@ jspm_packages
 
 ._*
 
-.env
+.env*
