@@ -19,7 +19,7 @@ import {
 import PageContainer from "@/components/container/PageContainer";
 import Breadcrumb from "@/components/shared/BreadcrumbCustom";
 import DashboardCard from "@/components/shared/BaseCard";
-import ChangePasswordForm from "@/components/forms/ChangePasswordForm";
+import ChangePasswordForm from "@/components/forms/PasswordChangeForm";
 
 const ChangePasswordPage: NextPage = () => {
   return (

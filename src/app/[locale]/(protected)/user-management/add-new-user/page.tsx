@@ -4,9 +4,9 @@ import PageContainer from "@/components/container/PageContainer";
 
 // components
 import DashboardCard from "@/components/shared/DashboardCard";
-import PersonalDetailsForm from "@/components/forms/PersonalDetailForm";
-import UserAuthenForm from "@/components/forms/UserAuthenForm";
-import ProfileImageUpload from "@/components/forms/ProfileImage";
+import PersonalDetailsForm from "@/components/forms/PersonalDetailsForm";
+import UserAuthenForm from "@/components/forms/UserSettingsAuthenForm";
+import ProfileImageUpload from "@/components/forms/ProfileImageCustom";
 import Breadcrumb from "@/components/shared/BreadcrumbCustom";
 
 const Dashboard = () => {

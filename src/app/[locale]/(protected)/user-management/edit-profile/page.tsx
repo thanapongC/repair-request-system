@@ -19,10 +19,10 @@ import {
 import PageContainer from "@/components/container/PageContainer";
 import DashboardCard from "@/components/shared/BaseCard";
 import Breadcrumb from "@/components/shared/BreadcrumbCustom";
-import ProfileImageUpload from "@/components/forms/ProfileImage";
-import ChangePasswordForm from "@/components/forms/ChangePasswordForm";
-import PersonalDetailsForm from "@/components/forms/PersonalDetailForm";
-import UserAuthenForm from "@/components/forms/UserAuthenForm";
+import ProfileImageUpload from "@/components/forms/ProfileImageCustom";
+import ChangePasswordForm from "@/components/forms/PasswordChangeForm";
+import PersonalDetailsForm from "@/components/forms/PersonalDetailsForm";
+import UserAuthenForm from "@/components/forms/UserSettingsAuthenForm";
 
 const AccountSettings: NextPage = () => {
   return (
