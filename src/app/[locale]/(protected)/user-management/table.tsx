@@ -79,7 +79,7 @@ const UserTable: React.FC<UserTableProps> = () => {
   };
 
   const handleEdit = (keyId: string) => {
-    router.push(`/user-management/edit-profile`);
+    router.push(`/user-management/edit-profile/user-1`);
     // router.push(`/user-management/edit-profile/${keyId}`)
   };
 
