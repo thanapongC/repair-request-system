@@ -8,112 +8,101 @@ interface StatusChipProps {
 const StatusChip: React.FC<StatusChipProps> = ({ status }) => {
   return (
     <div>
-      {status === "active" && (
+      {/* Green (Active, Returned, Completed) */}
+      {(status === "active" || status === "returned" || status === "completed") && (
         <Chip
           sx={{
             pl: "4px",
             pr: "4px",
-            backgroundColor: "success.main", // สีเขียว
+            backgroundColor: "success.main",
             color: "#fff",
           }}
           size="small"
-          label={status}
+          label={status.charAt(0).toUpperCase() + status.slice(1)}
         ></Chip>
       )}
-      {status === "inactive" && (
+      
+      {/* Gray (Inactive, Unrepairable) */}
+      {(status === "inactive" || status === "unrepairable") && (
         <Chip
           sx={{
             pl: "4px",
             pr: "4px",
-            backgroundColor: "secondary.main", // สีเทา
+            backgroundColor: "secondary.main",
             color: "#fff",
           }}
           size="small"
-          label={status}
+          label={status.charAt(0).toUpperCase() + status.slice(1)}
         ></Chip>
       )}
-      {status === "waiting" && (
+      
+      {/* Red (Waiting, Overdue, Cancelled) */}
+      {(status === "waiting" || status === "overdue" || status === "cancelled") && (
         <Chip
           sx={{
             pl: "4px",
             pr: "4px",
-            backgroundColor: "error.main", // สีแดง
+            backgroundColor: "error.main",
             color: "#fff",
           }}
           size="small"
-          label={status}
+          label={status.charAt(0).toUpperCase() + status.slice(1)}
         ></Chip>
       )}
-      {status === "damaged" && (
+      
+      {/* Yellow (Damaged, On Hold) */}
+      {(status === "damaged" || status === "on-hold") && (
         <Chip
           sx={{
             pl: "4px",
             pr: "4px",
-            backgroundColor: "warning.main", // สีเหลือง
+            backgroundColor: "warning.main",
             color: "#fff",
           }}
           size="small"
-          label="Damaged"
+          label={status.charAt(0).toUpperCase() + status.slice(1)}
         ></Chip>
       )}
-      {status === "returned-partially" && (
+      
+      {/* Light Blue (Returned Partially, Parts Ordered) */}
+      {(status === "returned-partially" || status === "parts-ordered") && (
         <Chip
           sx={{
             pl: "4px",
             pr: "4px",
-            backgroundColor: "info.main", // สีน้ำเงิน
+            backgroundColor: "info.main",
             color: "#fff",
           }}
           size="small"
-          label="Returned Partially"
+          label={status.charAt(0).toUpperCase() + status.slice(1).replace("-", " ")}
         ></Chip>
       )}
-      {status === "in-progress" && (
+      
+      {/* Dark Blue (In Progress, Awaiting Approval, Under Review, Ready for Pickup, Pending) */}
+      {(status === "in-progress" || status === "awaiting-approval" || status === "under-review" || status === "ready-for-pickup" || status === "pending") && (
         <Chip
           sx={{
             pl: "4px",
             pr: "4px",
-            backgroundColor: "primary.main", // สีน้ำเงินเข้ม
+            backgroundColor: "primary.main",
             color: "#fff",
           }}
           size="small"
-          label="In Progress"
+          label={status.charAt(0).toUpperCase() + status.slice(1).replace("-", " ")}
         ></Chip>
       )}
+      
+      {/* Light Green (Borrowed) */}
       {status === "borrowed" && (
         <Chip
           sx={{
             pl: "4px",
             pr: "4px",
-            backgroundColor: "success.light", // สีเขียวอ่อน
+            backgroundColor: "success.light",
             color: "success.main",
           }}
           size="small"
-          label="Borrowed"
-        ></Chip>
-      )}
-      {status === "returned" && (
-        <Chip
-          sx={{
-            pl: "4px",
-            pr: "4px",
-            backgroundColor: "success.main", // สีเขียว (เหมือน active)
-            color: "#fff",
-          }}
-          size="small"
-          label="Returned"
-        ></Chip>
-      )}
-      {status === "overdue" && (
-        <Chip
-          sx={{
-            pl: "4px",
-            pr: "4px",
-            backgroundColor: "error.main", // สีแดง (เหมือน waiting)
-            color: "#fff",
-          }}
-          size="small"
-          label="Overdue"
+          label={status.charAt(0).toUpperCase() + status.slice(1)}
         ></Chip>
       )}
     </div>

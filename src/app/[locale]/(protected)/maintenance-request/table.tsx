@@ -19,25 +19,117 @@ import StatusAlert from "@/components/shared/StatusAlert";
 import ConfirmDelete from "@/components/shared/ConfirmDialogCustom";
 import PaginationComponent from "@/components/shared/Pagination";
 import { useRouter } from "next/navigation";
-import { Download, DriveFileRenameOutline, Edit, Email } from "@mui/icons-material";
+import {
+  Download,
+  DriveFileRenameOutline,
+  Edit,
+  Email,
+} from "@mui/icons-material";
 import StatusChip from "@/components/shared/StatusChipCustom";
 import { formatNumber } from "@/utils/utils";
+import { IconEye } from "@tabler/icons-react";
 
-interface BorrowingDocument {
+interface MADocument {
   documentId: string;
   issueDate: string;
-  returnDate: string;
-  status: string;
-  itemReturned: number;
-  itemBorrow: number;
-  totalPrice: number;
+  statusRepair: string;
+  repairDuration: number;
+  repirePrice: number;
 }
+
+const repairStatuses = [
+  "pending",
+  "in-progress",
+  "on-hold",
+  "completed",
+  "cancelled",
+  "awaiting-approval",
+  "under-review",
+  "parts-ordered",
+  "ready-for-pickup",
+  "unrepairable"
+];
 
 const BorrowingDocumentTable: React.FC = () => {
   const router = useRouter();
 
   const totalItems = 100; // Define the total number of items
   const [currentItems, setCurrentItems] = useState<string[]>([]);
+
+    // Example data for the borrowing document
+    const MADocuments: MADocument[] = [
+      {
+        documentId: "B001",
+        issueDate: "2024-09-01",
+        repairDuration: 3,
+        repirePrice: 98473,
+        statusRepair: "pending",
+      },
+      {
+        documentId: "B002",
+        issueDate: "2024-09-01",
+        repairDuration: 3,
+        repirePrice: 98473,
+        statusRepair: "in-progress",
+      },
+      {
+        documentId: "B003",
+        issueDate: "2024-09-01",
+        repairDuration: 3,
+        repirePrice: 98473,
+        statusRepair: "on-hold",
+      },
+      {
+        documentId: "B004",
+        issueDate: "2024-09-01",
+        repairDuration: 3,
+        repirePrice: 98473,
+        statusRepair: "completed",
+      },
+      {
+        documentId: "B005",
+        issueDate: "2024-09-01",
+        repairDuration: 3,
+        repirePrice: 98473,
+        statusRepair: "cancelled",
+      },
+      {
+        documentId: "B006",
+        issueDate: "2024-09-01",
+        repairDuration: 3,
+        repirePrice: 98473,
+        statusRepair: "awaiting-approval",
+      },
+      {
+        documentId: "B007",
+        issueDate: "2024-09-01",
+        repairDuration: 3,
+        repirePrice: 98473,
+        statusRepair: "under-review",
+      },
+      {
+        documentId: "B008",
+        issueDate: "2024-09-01",
+        repairDuration: 3,
+        repirePrice: 98473,
+        statusRepair: "parts-ordered",
+      },
+      {
+        documentId: "B009",
+        issueDate: "2024-09-01",
+        repairDuration: 3,
+        repirePrice: 98473,
+        statusRepair: "ready-for-pickup",
+      },
+      {
+        documentId: "B010",
+        issueDate: "2024-09-01",
+        repairDuration: 3,
+        repirePrice: 98473,
+        statusRepair: "unrepairable",
+      },
+    ];
+  
 
   // Handle page change by updating the current items to display
   const handlePageChange = (
@@ -75,64 +167,6 @@ const BorrowingDocumentTable: React.FC = () => {
     router.push(`/borrowing-system/returning/B001`);
     // router.push(`/user-management/edit-profile/${keyId}`)
   };
-  // Example data for the borrowing document
-  const borrowingDocuments: BorrowingDocument[] = [
-    {
-      documentId: "B001",
-      issueDate: "2024-09-01",
-      returnDate: "2024-09-15",
-      status: "damaged",
-      itemBorrow: 5,
-      itemReturned: 0,
-      totalPrice: 3247244
-    },
-    {
-      documentId: "B002",
-      issueDate: "2024-09-01",
-      returnDate: "2024-09-15",
-      status: "returned-partially",
-      itemBorrow: 5,
-      itemReturned: 2,
-      totalPrice: 958832
-    },
-    {
-      documentId: "B003",
-      issueDate: "2024-09-01",
-      returnDate: "2024-09-15",
-      status: "in-progress",
-      itemBorrow: 5,
-      itemReturned: 0,
-      totalPrice: 94383
-    },
-    {
-      documentId: "B004",
-      issueDate: "2024-09-01",
-      returnDate: "2024-09-15",
-      status: "borrowed",
-      itemBorrow: 5,
-      itemReturned: 0,
-      totalPrice: 839302
-    },
-    {
-      documentId: "B005",
-      issueDate: "2024-09-01",
-      returnDate: "2024-09-15",
-      status: "returned",
-      itemBorrow: 5,
-      itemReturned: 5,
-      totalPrice: 93938
-    },
-    {
-      documentId: "B006",
-      issueDate: "2024-09-01",
-      returnDate: "2024-09-15",
-      status: "overdue",
-      itemBorrow: 0,
-      itemReturned: 0,
-      totalPrice: 345973
-    },
-  ];
-
   return (
     <BaseCard title="Maintenance Documents">
       <TableContainer
@@ -175,24 +209,24 @@ const BorrowingDocumentTable: React.FC = () => {
               </TableCell>
               <TableCell>
                 <Typography color="textSecondary" variant="h6">
-                  Return Date
+                  Repire Status
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography color="textSecondary" variant="h6">
-                  Status
+                  Repire Duration
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography color="textSecondary" variant="h6">
-                  Total Price
+                  Repire Price
                 </Typography>
               </TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {borrowingDocuments.map((doc, index) => (
+            {MADocuments.map((doc, index) => (
               <TableRow key={index}>
                 <TableCell>
                   <Typography variant="h6" fontWeight={600}>
@@ -203,13 +237,17 @@ const BorrowingDocumentTable: React.FC = () => {
                   <Typography variant="h6">{doc.issueDate}</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h6">{doc.returnDate}</Typography>
+                  <Typography variant="h6">
+                    <StatusChip status={doc.statusRepair} />
+                  </Typography>
+                </TableCell>
+                <TableCell align="center">
+                  <Typography variant="h6">{doc.repairDuration}</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h6"><StatusChip status={doc.status} /></Typography>
-                </TableCell>
-                <TableCell>
-                  <Typography variant="h6">{formatNumber(doc.totalPrice)} ฿</Typography>
+                  <Typography variant="h6">
+                    {formatNumber(doc.repirePrice)} ฿
+                  </Typography>
                 </TableCell>
                 <TableCell align="center">
                   <IconButton
@@ -218,7 +256,7 @@ const BorrowingDocumentTable: React.FC = () => {
                     sx={{ ml: 2 }}
                     onClick={() => handleEdit("1")}
                   >
-                    <DriveFileRenameOutline />
+                    <IconEye />
                   </IconButton>
                   <ConfirmDelete
                     itemName="Sample Item"
