@@ -66,7 +66,7 @@ const RepairForm: React.FC = () => {
 
   return (
     <Box p={3} border="1px solid #ccc" borderRadius="8px">
-            <Typography variant="h6" gutterBottom sx={{ mt: 5 }}>
+            <Typography variant="h6" gutterBottom>
         Cost & Duration
       </Typography>
       <Typography variant="body2" color="text.secondary" gutterBottom>
