@@ -14,6 +14,7 @@ import Breadcrumb from "@/components/shared/BreadcrumbCustom";
 import { Grid, StepContent } from "@mui/material";
 import RepairForm from "@/components/forms/AddPartsForm";
 import PendingApproval from "@/components/shared/PendingApproval";
+import AwaitingWithdrawal from "@/components/shared/AwaitingWithdrawal";
 
 const steps = [
   "Add parts and assess cost",
@@ -58,7 +59,7 @@ export default function HorizontalLinearStepper() {
       case 1:
         return <PendingApproval />;
       case 2:
-        return <RepairForm />;
+        return <AwaitingWithdrawal />;
       case 3:
         return <RepairForm />;
       case 4:
@@ -77,7 +78,7 @@ export default function HorizontalLinearStepper() {
       case 1:
         return "The system has sent an email to the maintenance supervisor. Please wait for approval from the maintenance supervisor.";
       case 2:
-        return "3";
+        return "The personnel involved in the repair are currently inspecting the equipment and processing the equipment requisition. Once the requisition is complete, the process can proceed to the next step.";
       case 3:
         return "3";
       case 4:

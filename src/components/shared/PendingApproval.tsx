@@ -1,6 +1,6 @@
 import React from 'react';
 import { NextPage } from 'next';
-import { Container, Typography, Box, CircularProgress, Button } from '@mui/material';
+import { Container, Typography, Box, CircularProgress, Button, Grid } from '@mui/material';
 import Head from 'next/head';
 
 const PendingApproval: NextPage = () => {
@@ -17,7 +17,7 @@ const PendingApproval: NextPage = () => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            minHeight: '100vh',
+            minHeight: '40vh',
             textAlign: 'center',
           }}
         >
@@ -31,9 +31,15 @@ const PendingApproval: NextPage = () => {
           <Typography variant="body2" color="text.secondary">
             Please check back later or contact support if you have any questions.
           </Typography>
-          <Button variant="contained" color="primary" sx={{ mt: 5 }}>
+          <Grid>
+          <Button variant="contained" color="primary" sx={{ mt: 5, mr:2 }}>
             Approve
           </Button>
+          <Button variant="contained" color="secondary" sx={{ mt: 5 }}>
+            Approve And Withdraw Already
+          </Button>
+          </Grid>
+
         </Box>
       </Container>
     </>
