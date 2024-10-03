@@ -17,6 +17,7 @@ import PendingApproval from "@/components/shared/PendingApproval";
 import AwaitingWithdrawal from "@/components/shared/AwaitingWithdrawal";
 import StartRepairForm from "@/components/forms/StartRepairForm";
 import UpdateRepairStatus from "@/components/forms/UpdateRepairStatus";
+import RepairStatus from "@/components/shared/RepairStatus";
 
 const steps = [
   "Add parts and assess cost",
@@ -67,7 +68,7 @@ export default function HorizontalLinearStepper() {
       case 4:
         return <UpdateRepairStatus />;
       case 5:
-        return <RepairForm />;
+        return <RepairStatus status="unrepairable" />;
       default:
         return <div>Not Found</div>;
     }
@@ -97,12 +98,31 @@ export default function HorizontalLinearStepper() {
       <Breadcrumb />
       <Box mt={5} p={3} border="1px solid #ccc" borderRadius="8px">
         Read Document (MA001) --- (*You Can Read Document Details Here)
+        <Button
+          variant="contained"
+          color="success"
+          size="small"
+          // onClick={handleWithdraw}
+          sx={{ml: 2}}
+        >
+          View Report
+        </Button>
       </Box>
       <Grid spacing={2} mt={2}>
-        <Button variant="contained" color="primary" sx={{ mr: 1 }} onClick={() => handleBack()}>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ mr: 1 }}
+          onClick={() => handleBack()}
+        >
           Back Step (for test only)
         </Button>
-        <Button variant="contained" color="secondary" sx={{ mr: 1 }} onClick={() => handleNext()}>
+        <Button
+          variant="contained"
+          color="secondary"
+          sx={{ mr: 1 }}
+          onClick={() => handleNext()}
+        >
           Next Part (for test only)
         </Button>
       </Grid>

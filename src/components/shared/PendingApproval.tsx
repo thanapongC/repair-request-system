@@ -32,6 +32,9 @@ const PendingApproval: NextPage = () => {
             Please check back later or contact support if you have any questions.
           </Typography>
           <Grid>
+          <Button variant="contained" color="success" sx={{ mt: 5, mr: 2 }}>
+          Print the repair order
+          </Button>
           <Button variant="contained" color="primary" sx={{ mt: 5, mr:2 }}>
             Approve
           </Button>
