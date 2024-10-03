@@ -5,6 +5,36 @@ import { red } from "@mui/material/colors";
 
 // Create a theme instance.
 const theme = createTheme({
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiInputBase-input': {
+            // Customize padding and font size for small input
+            padding: '10px', // Adjust padding
+            fontSize: '4px', // Adjust font size
+          },
+          '&.MuiOutlinedInput-root': {
+            borderRadius: '8px', // Custom border radius
+          },
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          '&.small': {
+            padding: '8px', // Smaller padding for small input
+            fontSize: '12px', // Smaller font size
+          },
+          '&.large': {
+            padding: '16px', // Larger padding for large input
+            fontSize: '18px', // Larger font size
+          },
+        },
+      },
+    },
+  },
   palette: {
     primary: {
       main: "#03c9d7",

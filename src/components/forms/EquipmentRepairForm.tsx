@@ -68,21 +68,6 @@ const EquipmentRepairForm = () => {
             rows={4} // Set number of rows for multiline input
           />
         </Grid>
-
-        {/* Status */}
-        {/* <Grid item xs={6}>
-          <Select
-            label="Status"
-            value={status}
-            onChange={(e) => setStatus(e.target.value as string)}
-            fullWidth
-          >
-            <MenuItem value="Borrowed">In Progress</MenuItem>
-            <MenuItem value="Borrowed">Approve</MenuItem>
-            <MenuItem value="Returned">Repair Completed</MenuItem>
-            <MenuItem value="Returned">Repair Completed</MenuItem>
-          </Select>
-        </Grid> */}
       </Grid>
     </Box>
   );

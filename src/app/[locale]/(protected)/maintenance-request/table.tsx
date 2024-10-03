@@ -164,7 +164,7 @@ const BorrowingDocumentTable: React.FC = () => {
   };
 
   const handleEdit = (keyId: string) => {
-    router.push(`/borrowing-system/returning/B001`);
+    router.push(`/maintenance-request/progress/MA001`);
     // router.push(`/user-management/edit-profile/${keyId}`)
   };
   return (
@@ -266,14 +266,14 @@ const BorrowingDocumentTable: React.FC = () => {
                     size="small"
                     color="secondary"
                     // sx={{ ml: 2 }}
-                    onClick={() => handleEdit("1")}
+                    // onClick={() => handleEdit("1")}
                   >
                     <Download />
                   </IconButton>
                   <IconButton
                     size="small"
                     color="success"
-                    onClick={() => handleRemove("1")}
+                    // onClick={() => handleRemove("1")}
                   >
                     <Email />
                   </IconButton>
