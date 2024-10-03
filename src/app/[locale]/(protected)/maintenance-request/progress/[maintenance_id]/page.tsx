@@ -15,6 +15,8 @@ import { Grid, StepContent } from "@mui/material";
 import RepairForm from "@/components/forms/AddPartsForm";
 import PendingApproval from "@/components/shared/PendingApproval";
 import AwaitingWithdrawal from "@/components/shared/AwaitingWithdrawal";
+import StartRepairForm from "@/components/forms/StartRepairForm";
+import UpdateRepairStatus from "@/components/forms/UpdateRepairStatus";
 
 const steps = [
   "Add parts and assess cost",
@@ -61,9 +63,9 @@ export default function HorizontalLinearStepper() {
       case 2:
         return <AwaitingWithdrawal />;
       case 3:
-        return <RepairForm />;
+        return <StartRepairForm />;
       case 4:
-        return <RepairForm />;
+        return <UpdateRepairStatus />;
       case 5:
         return <RepairForm />;
       default:
@@ -80,11 +82,11 @@ export default function HorizontalLinearStepper() {
       case 2:
         return "The personnel involved in the repair are currently inspecting the equipment and processing the equipment requisition. Once the requisition is complete, the process can proceed to the next step.";
       case 3:
-        return "3";
+        return "Waiting for the repair start date to be scheduled.";
       case 4:
-        return "3";
+        return "You can update the repair status here.";
       case 5:
-        return "3";
+        return "The final step of the repair.";
       default:
         return <div>Not Found</div>;
     }
