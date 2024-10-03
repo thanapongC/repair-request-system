@@ -66,7 +66,7 @@ const RepairForm: React.FC = () => {
 
   return (
     <Box p={3} border="1px solid #ccc" borderRadius="8px">
-            <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" gutterBottom>
         Cost & Duration
       </Typography>
       <Typography variant="body2" color="text.secondary" gutterBottom>
@@ -97,7 +97,7 @@ const RepairForm: React.FC = () => {
         </Grid>
       </Grid>
 
-      <Typography variant="h6" gutterBottom sx={{mt: 5}}>
+      <Typography variant="h6" gutterBottom sx={{ mt: 5 }}>
         Equipment List
       </Typography>
       <Typography variant="body2" color="text.secondary" gutterBottom>
@@ -180,15 +180,14 @@ const RepairForm: React.FC = () => {
 
       <Grid xs={12} spacing={2} sx={{ mt: 2 }}>
         <PartsTable />
-        <SummaryPrice/>
+        <SummaryPrice />
       </Grid>
-      
-      
+
       <Grid container spacing={2} sx={{ mt: 2 }}>
-        <Grid item xs={12} container justifyContent={'flex-end'}>
-        <Button variant="contained" color="secondary" sx={{ mr: 1 }}>
-          Update Status And Next Step
-        </Button>
+        <Grid item xs={12} container justifyContent={"flex-end"}>
+          <Button variant="contained" color="secondary" sx={{ mr: 1 }}>
+            Update Status And Next Step
+          </Button>
         </Grid>
       </Grid>
     </Box>

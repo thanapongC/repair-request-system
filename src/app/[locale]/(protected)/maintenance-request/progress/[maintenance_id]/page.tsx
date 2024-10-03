@@ -11,8 +11,9 @@ import EquipmentRepairForm from "@/components/forms/EquipmentRepairForm";
 import PageContainer from "@/components/container/PageContainer";
 import DashboardCard from "@/components/shared/BaseCard";
 import Breadcrumb from "@/components/shared/BreadcrumbCustom";
-import { StepContent } from "@mui/material";
+import { Grid, StepContent } from "@mui/material";
 import RepairForm from "@/components/forms/AddPartsForm";
+import PendingApproval from "@/components/shared/PendingApproval";
 
 const steps = [
   "Add parts and assess cost",
@@ -55,8 +56,14 @@ export default function HorizontalLinearStepper() {
       case 0:
         return <RepairForm />;
       case 1:
-        return <RepairForm />;
+        return <PendingApproval />;
       case 2:
+        return <RepairForm />;
+      case 3:
+        return <RepairForm />;
+      case 4:
+        return <RepairForm />;
+      case 5:
         return <RepairForm />;
       default:
         return <div>Not Found</div>;
@@ -68,32 +75,19 @@ export default function HorizontalLinearStepper() {
       case 0:
         return "The document status will change to 'Awaiting approval' after you add parts and specify the repair duration.";
       case 1:
-        return "2";
+        return "The system has sent an email to the maintenance supervisor. Please wait for approval from the maintenance supervisor.";
       case 2:
+        return "3";
+      case 3:
+        return "3";
+      case 4:
+        return "3";
+      case 5:
         return "3";
       default:
         return <div>Not Found</div>;
     }
   }
-
-  const handleSkip = () => {
-    // if (!isStepOptional(activeStep)) {
-    //   // You probably want to guard against something like this,
-    //   // it should never occur unless someone's actively trying to break something.
-    //   throw new Error("You can't skip a step that isn't optional.");
-    // }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
-  };
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -101,6 +95,14 @@ export default function HorizontalLinearStepper() {
       <Box mt={5} p={3} border="1px solid #ccc" borderRadius="8px">
         Read Document (MA001) --- (*You Can Read Document Details Here)
       </Box>
+      <Grid spacing={2} mt={2}>
+        <Button variant="contained" color="primary" sx={{ mr: 1 }} onClick={() => handleBack()}>
+          Back Step (for test only)
+        </Button>
+        <Button variant="contained" color="secondary" sx={{ mr: 1 }} onClick={() => handleNext()}>
+          Next Part (for test only)
+        </Button>
+      </Grid>
       <Stepper activeStep={activeStep} sx={{ mt: 5 }} orientation="vertical">
         {steps.map((label, index) => {
           const stepProps: { completed?: boolean } = {};
@@ -122,9 +124,7 @@ export default function HorizontalLinearStepper() {
                 <React.Fragment>
                   <Box sx={{ pt: 1 }}>
                     <PageContainer>
-                      <DashboardCard>
-                        {_renderStepContent(index)}
-                      </DashboardCard>
+                      <DashboardCard>{_renderStepContent(index)}</DashboardCard>
                     </PageContainer>
                   </Box>
                 </React.Fragment>
