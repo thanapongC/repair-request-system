@@ -54,6 +54,7 @@ const UpdateRepairStatus: NextPage = () => {
                 label="Repair Completed Date"
                 variant="outlined"
                 value={date}
+                fullWidth
                 //   value={repairDate}
                 //   onChange={(e) => setRepairDate(e.target.value)}
                 required
@@ -70,6 +71,17 @@ const UpdateRepairStatus: NextPage = () => {
                 <MenuItem value="completed">Completed</MenuItem>
                 <MenuItem value="unrepairable">Unrepairable</MenuItem>
               </Select>
+            </Grid>
+            <Grid container item xs={12}>
+              <TextField
+                size="small"
+                fullWidth
+                label="Remark"
+                variant="outlined"
+                multiline
+                rows={3}
+                sx={{ mt: 2}}
+              />
             </Grid>
           </Grid>
           <Button
