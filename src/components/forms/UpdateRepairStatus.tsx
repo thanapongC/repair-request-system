@@ -80,7 +80,7 @@ const UpdateRepairStatus: NextPage = () => {
                 variant="outlined"
                 multiline
                 rows={3}
-                sx={{ mt: 2}}
+                sx={{ mt: 2 }}
               />
             </Grid>
           </Grid>
