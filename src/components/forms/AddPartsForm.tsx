@@ -67,10 +67,84 @@ const RepairForm: React.FC = () => {
   return (
     <Box p={3} border="1px solid #ccc" borderRadius="8px">
       <Typography variant="h6" gutterBottom>
+        Person in Charge & Supervisor
+      </Typography>
+      <Typography variant="body2" color="text.secondary" gutterBottom>
+        Insert Person in Charge & Supervisor
+      </Typography>
+      <Grid container spacing={2} sx={{ mt: 2 }}>
+        <Grid item xs={4}>
+          <TextField
+            label="Supervisor Name"
+            type="number"
+            variant="outlined"
+            fullWidth
+            size="small"
+            value={repairTime}
+            // onChange={(e) => setRepairTime(e.target.value)}
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <TextField
+            label="Person in Charge No.1"
+            type="number"
+            variant="outlined"
+            fullWidth
+            size="small"
+            value={repairTime}
+            // onChange={(e) => setRepairTime(e.target.value)}
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <TextField
+            label="Person in Charge No.2"
+            type="number"
+            variant="outlined"
+            fullWidth
+            size="small"
+            value={repairTime}
+            // onChange={(e) => setRepairTime(e.target.value)}
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <TextField
+            label="Person in Charge No.3"
+            type="number"
+            variant="outlined"
+            fullWidth
+            size="small"
+            value={repairTime}
+            // onChange={(e) => setRepairTime(e.target.value)}
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <TextField
+            label="Person in Charge No.4"
+            type="number"
+            variant="outlined"
+            fullWidth
+            size="small"
+            value={repairTime}
+            // onChange={(e) => setRepairTime(e.target.value)}
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <TextField
+            label="Person in Charge No.5"
+            type="number"
+            variant="outlined"
+            fullWidth
+            size="small"
+            value={repairTime}
+            // onChange={(e) => setRepairTime(e.target.value)}
+          />
+        </Grid>
+      </Grid>
+      <Typography variant="h6" gutterBottom sx={{ mt: 5 }}>
         Cost & Duration
       </Typography>
       <Typography variant="body2" color="text.secondary" gutterBottom>
-        Insert Cost & Duration
+      For the repair duration, it is only an estimated time.
       </Typography>
       <Grid container spacing={2} sx={{ mt: 2 }}>
         <Grid item xs={4}>
@@ -86,7 +160,7 @@ const RepairForm: React.FC = () => {
         </Grid>
         <Grid item xs={4}>
           <TextField
-            label="Supervisor Email"
+            label="Cost (optional)"
             type="number"
             variant="outlined"
             fullWidth
@@ -112,7 +186,7 @@ const RepairForm: React.FC = () => {
             size="small"
             value={partCode}
             onChange={(e) => setPartCode(e.target.value)}
-            required
+            // required
           />
         </Grid>
         <Grid item xs={4}>
@@ -128,16 +202,27 @@ const RepairForm: React.FC = () => {
         </Grid>
         <Grid item xs={4}>
           <TextField
-            label="Serial Part"
+            label="S/N"
             variant="outlined"
             fullWidth
             size="small"
             value={partModel}
             onChange={(e) => setPartModel(e.target.value)}
-            required
+            // required
           />
         </Grid>
         <Grid item xs={4}>
+          <TextField
+            label="Brand"
+            variant="outlined"
+            fullWidth
+            size="small"
+            value={partModel}
+            onChange={(e) => setPartModel(e.target.value)}
+            // required
+          />
+        </Grid>
+        {/* <Grid item xs={4}>
           <TextField
             label="Part Detail"
             variant="outlined"
@@ -146,10 +231,22 @@ const RepairForm: React.FC = () => {
             value={partDetails}
             onChange={(e) => setPartDetails(e.target.value)}
           />
+        </Grid> */}
+        <Grid item xs={3}>
+          <TextField
+            label="Spare Part Price"
+            variant="outlined"
+            fullWidth
+            type="number"
+            size="small"
+            value={partPrice}
+            // onChange={(e) => setPartPrice(e.target.value)}
+            // required
+          />
         </Grid>
         <Grid item xs={3}>
           <TextField
-            label="Part Price"
+            label="Quantity"
             variant="outlined"
             fullWidth
             type="number"
@@ -159,9 +256,9 @@ const RepairForm: React.FC = () => {
             required
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <TextField
-            label="Quantity"
+            label="Unit"
             variant="outlined"
             fullWidth
             type="number"

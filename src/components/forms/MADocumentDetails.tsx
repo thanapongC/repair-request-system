@@ -55,13 +55,38 @@ const MaintenanceDocument = () => {
           />
         </Grid>
 
+
+
         {/* Issue Date */}
         <Grid item xs={6}>
           <TextField
-            label="Issue Date"
+            label="Action Date"
             type="date"
             value={issueDate}
             onChange={(e) => setIssueDate(e.target.value)}
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+          />
+        </Grid>
+
+
+        <Grid item xs={12}>
+          <TextField
+            label="Site ID"
+            type="text"
+            // value={issueDate}
+            // onChange={(e) => setIssueDate(e.target.value)}
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <TextField
+            label="Site Name"
+            type="text"
+            // value={issueDate}
+            // onChange={(e) => setIssueDate(e.target.value)}
             InputLabelProps={{ shrink: true }}
             fullWidth
           />

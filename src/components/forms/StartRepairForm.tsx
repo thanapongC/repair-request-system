@@ -8,6 +8,7 @@ import {
   Button,
   Input,
   TextField,
+  Grid,
 } from "@mui/material";
 import Head from "next/head";
 import { Label } from "recharts";
@@ -45,16 +46,35 @@ const StartRepairForm: NextPage = () => {
           <Typography variant="subtitle1" sx={{ mb: 2 }}>
             Waiting for the repair start date to be scheduled.
           </Typography>
-          <TextField
-            type="date"
-            label="Repair Date"
-            variant="outlined"
-            margin="normal"
-            value={date}
-            //   value={repairDate}
-            //   onChange={(e) => setRepairDate(e.target.value)}
-            required
-          />
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <TextField
+                type="date"
+                label="Repair Date"
+                variant="outlined"
+                margin="normal"
+                value={date}
+                fullWidth
+                //   value={repairDate}
+                //   onChange={(e) => setRepairDate(e.target.value)}
+                required
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                type="time"
+                label="Repair Time"
+                variant="outlined"
+                margin="normal"
+                value={date}
+                fullWidth
+                //   value={repairDate}
+                //   onChange={(e) => setRepairDate(e.target.value)}
+                required
+              />
+            </Grid>
+          </Grid>
+
           <Button
             variant="contained"
             color="primary"
@@ -65,8 +85,7 @@ const StartRepairForm: NextPage = () => {
             Start the repair
           </Button>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
-            click the "Start the repair" button to begin 
-            the repair
+            click the "Start the repair" button to begin the repair
           </Typography>
         </Box>
       </Container>

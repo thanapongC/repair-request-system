@@ -7,7 +7,9 @@ import {
   Button,
   Grid,
   Typography,
+  Grid2,
 } from "@mui/material";
+import BaseCard from "../shared/BaseCard";
 
 const BorrowReturnDetails = () => {
   // State to manage form input
@@ -28,14 +30,14 @@ const BorrowReturnDetails = () => {
   };
 
   return (
-    <Box p={3} border="1px solid #ccc" borderRadius="8px">
-      <Typography variant="h6" gutterBottom>
+    <BaseCard>
+      <Box p={3} border="1px solid #ccc" borderRadius="8px">
+        {/* <Typography variant="h6" gutterBottom>
         Borrow-Return Details
-      </Typography>
+      </Typography> */}
 
-      <Grid container spacing={2}>
-        {/* Borrow Date */}
-        <Grid item xs={6}>
+        <Grid2 container spacing={2}>
+          {/* <Grid item xs={6}>
           <TextField
             label="Borrow Date"
             type="date"
@@ -46,7 +48,6 @@ const BorrowReturnDetails = () => {
           />
         </Grid>
 
-        {/* Actual Return Date */}
         <Grid item xs={6}>
           <TextField
             label="Actual Return Date"
@@ -56,9 +57,9 @@ const BorrowReturnDetails = () => {
             InputLabelProps={{ shrink: true }}
             fullWidth
           />
-        </Grid>
+        </Grid> */}
 
-        {/* Return Status
+          {/* Return Status
         <Grid item xs={6}>
           <Select
             label="Return Status"
@@ -72,20 +73,20 @@ const BorrowReturnDetails = () => {
           </Select>
         </Grid> */}
 
-        {/* Remarks */}
-        <Grid item xs={12}>
-          <TextField
-            label="Remarks"
-            value={remarks}
-            onChange={(e) => setRemarks(e.target.value)}
-            multiline
-            rows={4}
-            fullWidth
-          />
-        </Grid>
-
-      </Grid>
-    </Box>
+          {/* Remarks */}
+          <Grid2 size={12}>
+            <TextField
+              label="Remarks (optional)"
+              value={remarks}
+              onChange={(e) => setRemarks(e.target.value)}
+              multiline
+              rows={4}
+              fullWidth
+            />
+          </Grid2>
+        </Grid2>
+      </Box>
+    </BaseCard>
   );
 };
 

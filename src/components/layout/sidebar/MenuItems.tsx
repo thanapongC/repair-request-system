@@ -45,6 +45,11 @@ export const useMenuItems = () => {
           title: t("menu2-2"),
           href: `/${localActive}/borrowing-system/add-borrow-document`,
         },
+        {
+          id: uniqueId(),
+          title: "Reports",
+          href: `/${localActive}/borrowing-system/reports`,
+        },
       ],
     },
     {
@@ -63,6 +68,11 @@ export const useMenuItems = () => {
           title: t("menu3-2"),
           href: `/${localActive}/maintenance-request/add-maintenance-request`,
         },
+        {
+          id: uniqueId(),
+          title: "Reports",
+          href: `/${localActive}/maintenance-request/reports`,
+        }
       ],
     },
     {

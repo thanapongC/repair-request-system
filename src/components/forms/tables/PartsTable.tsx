@@ -69,10 +69,12 @@ const PartsTable: React.FC = () => {
             <TableRow>
               <TableCell>Part SKU</TableCell>
               <TableCell>Part Name</TableCell>
+              <TableCell>Brand</TableCell>
               <TableCell>Part Serial</TableCell>
               <TableCell>Part Detail</TableCell>
               <TableCell>Part Price</TableCell>
               <TableCell>Quantity</TableCell>
+              <TableCell>Unit</TableCell>
               <TableCell>Edit</TableCell>
               <TableCell>Remove</TableCell>
             </TableRow>
@@ -82,10 +84,12 @@ const PartsTable: React.FC = () => {
               <TableRow key={index}>
                 <TableCell>{equipment.id}</TableCell>
                 <TableCell>{equipment.partName}</TableCell>
+                <TableCell>Hydraforce</TableCell>
                 <TableCell>{equipment.partCode}</TableCell>
                 <TableCell>{equipment.partDetails}</TableCell>
                 <TableCell>{equipment.partPrice}</TableCell>
                 <TableCell>{equipment.quantity}</TableCell>
+                <TableCell>Liter</TableCell>
                 <TableCell>
                   <IconButton color="primary">
                     <EditNoteTwoTone />

@@ -46,8 +46,8 @@ const UpdateRepairStatus: NextPage = () => {
             If your equipment has been repaired, don’t forget to update the
             repair status.
           </Typography>
-          <Grid container my={3}>
-            <Grid container item xs={6} justifyContent={"flex-end"} pr={2}>
+          <Grid container spacing={2} >
+            <Grid container item xs={4}>
               <TextField
                 type="date"
                 size="small"
@@ -60,7 +60,21 @@ const UpdateRepairStatus: NextPage = () => {
                 required
               />
             </Grid>
-            <Grid container item xs={6}>
+            <Grid container item xs={4}>
+            <TextField
+                type="time"
+                size="small"
+                label="Repair Completed Time"
+                variant="outlined"
+                // margin="normal"
+                value={date}
+                fullWidth
+                //   value={repairDate}
+                //   onChange={(e) => setRepairDate(e.target.value)}
+                required
+              />
+            </Grid>
+            <Grid container item xs={4}>
               <Select
                 label="Status"
                 value={status}

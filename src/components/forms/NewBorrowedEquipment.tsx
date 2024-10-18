@@ -12,6 +12,7 @@ import {
 const BorrowedEquipmentList = () => {
   // State to manage form input
   const [equipmentId, setEquipmentId] = useState("");
+  const [issueDate, setIssueDate] = useState("");
   const [equipmentName, setEquipmentName] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [equipmentStatus, setEquipmentStatus] = useState("Available");
@@ -33,15 +34,52 @@ const BorrowedEquipmentList = () => {
 
   return (
     <Box p={3} border="1px solid #ccc" borderRadius="8px">
-      <Typography variant="h6" gutterBottom>
-        Borrowed Equipment List
+      <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
+        Add Borrowed Equipment Category
+      </Typography>
+      <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <TextField
+            label="Category Name"
+            size="small"
+            value={equipmentId}
+            onChange={(e) => setEquipmentId(e.target.value)}
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={2}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleFormSubmit}
+          >
+            Add Category
+          </Button>
+        </Grid>
+      </Grid>
+
+      <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
+        Add Borrowed Equipment List
       </Typography>
 
       <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <Select
+            label="Equipment Status"
+            value={1}
+            onChange={(e) => setEquipmentStatus(e.target.value as string)}
+            fullWidth
+          >
+            <MenuItem value="1">Undefind</MenuItem>
+            <MenuItem value="2">Category 1</MenuItem>
+            <MenuItem value="3">Category 2</MenuItem>
+          </Select>
+        </Grid>
+
         {/* Equipment ID */}
         <Grid item xs={6}>
           <TextField
-            label="Equipment ID"
+            label="Equipment ID (S/N)"
             value={equipmentId}
             onChange={(e) => setEquipmentId(e.target.value)}
             fullWidth
@@ -59,7 +97,7 @@ const BorrowedEquipmentList = () => {
         </Grid>
 
         {/* Quantity */}
-        <Grid item xs={4}>
+        <Grid item xs={2}>
           <TextField
             label="Quantity"
             type="number"
@@ -97,18 +135,46 @@ const BorrowedEquipmentList = () => {
         {/* Number of Rental Days */}
         <Grid item xs={4}>
           <TextField
-            label="Number of Rental Days"
-            type="number"
-            value={rentalDays}
-            onChange={(e) => setRentalDays(parseInt(e.target.value))}
+            label="Start Date"
+            type="date"
+            value={issueDate}
+            onChange={(e) => setIssueDate(e.target.value)}
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+          />
+        </Grid>
+
+        <Grid item xs={4}>
+          <TextField
+            label="End Date"
+            type="date"
+            value={issueDate}
+            onChange={(e) => setIssueDate(e.target.value)}
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <TextField
+            label="Remake"
+            type="text"
+            multiline
+            rows={3}
+            value={issueDate}
+            onChange={(e) => setIssueDate(e.target.value)}
+            InputLabelProps={{ shrink: true }}
             fullWidth
           />
         </Grid>
 
         {/* Submit Button */}
         <Grid item xs={12}>
-          <Button variant="contained" color="primary" onClick={handleFormSubmit}>
-            Add Equipment
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleFormSubmit}
+          >
+            Add Borrow Equipment
           </Button>
         </Grid>
       </Grid>
