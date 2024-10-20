@@ -77,11 +77,11 @@ const EquipmentReturnTable: React.FC = () => {
   const [currentStatus, setCurrentStatus] = useState("Borrow");
 
   const handleOpenDialog2 = () => {
-    setOpen(true);
+    setOpen2(true);
   };
 
   const handleCloseDialog2 = () => {
-    setOpen(false);
+    setOpen2(false);
   };
 
   const handleSave = (newStatus: string, remark: string) => {
@@ -115,37 +115,37 @@ const EquipmentReturnTable: React.FC = () => {
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography color="textSecondary" variant="h6">
+                <Typography color="textSecondary" variant="h6" align="left">
                   Equipment Name
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography color="textSecondary" variant="h6">
+                <Typography color="textSecondary" variant="h6" align="right">
                   Days Left
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography color="textSecondary" variant="h6">
+                <Typography color="textSecondary" variant="h6" align="right">
                   Amount
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography color="textSecondary" variant="h6">
-                  Charge Price
+                <Typography color="textSecondary" variant="h6" align="right">
+                  Charge Price (bath)
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography color="textSecondary" variant="h6">
+                <Typography color="textSecondary" variant="h6" align="center">
                   Remake
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography color="textSecondary" variant="h6">
+                <Typography color="textSecondary" variant="h6" align="center">
                   Update
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography color="textSecondary" variant="h6">
+                <Typography color="textSecondary" variant="h6" align="center">
                   Returned Remake
                 </Typography>
               </TableCell>
@@ -155,7 +155,9 @@ const EquipmentReturnTable: React.FC = () => {
             {/* {products.map((product) => ( */}
             <>
               <TableRow key={1}>
-                <TableCell colSpan={6}>Category 1</TableCell>
+                <TableCell colSpan={9} sx={{ fontWeight: 600 }}>
+                  Category 1
+                </TableCell>
               </TableRow>
               {/* {product.subProductList && */}
               {/* // product.subProductList.map((subProduct) => ( */}
@@ -165,18 +167,18 @@ const EquipmentReturnTable: React.FC = () => {
                 <TableCell align="right">10</TableCell>
                 <TableCell align="right">3</TableCell>
 
-                <TableCell align="right">3000</TableCell>
-                <TableCell align="left">
+                <TableCell align="right">{formatNumber(3000)}</TableCell>
+                <TableCell align="center">
                   <IconButton
                     size="small"
-                    color="primary"
+                    color="error"
                     onClick={handleOpenDialog}
                     // onClick={() => handleEditSubProduct(subProduct)}
                   >
                     <Visibility />
                   </IconButton>
                 </TableCell>
-                <TableCell>
+                <TableCell align="center">
                   <IconButton
                     size="small"
                     color="primary"
@@ -185,10 +187,10 @@ const EquipmentReturnTable: React.FC = () => {
                     <EditNoteTwoTone />
                   </IconButton>
                 </TableCell>
-                <TableCell>
+                <TableCell align="center">
                   <IconButton
                     size="small"
-                    color="primary"
+                    color="success"
                     onClick={handleOpenDialog}
                     // onClick={() => handleEditSubProduct(subProduct)}
                   >
@@ -221,7 +223,7 @@ const EquipmentReturnTable: React.FC = () => {
           remake={remakeText}
         />
         <UpdateEquipmentDialog
-          open={open}
+          open={open2}
           onClose={handleCloseDialog2}
           currentStatus={currentStatus}
           onSave={handleSave}

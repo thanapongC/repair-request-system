@@ -1,5 +1,5 @@
 "use client";
-import { Grid, Box, Button, Typography, Paper } from "@mui/material";
+import { Grid, Box, Button, Typography, Paper, Grid2 } from "@mui/material";
 import PageContainer from "@/components/container/PageContainer";
 
 // components
@@ -16,62 +16,56 @@ const BorrowingPage = () => {
     <PageContainer>
       <Breadcrumb />
       <DashboardCard>
-        <Grid container spacing={3} sx={{ p: 3 }}>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ p: 3 }}>
-              <Typography variant="h6" gutterBottom>
-                Document Details
-              </Typography>
-              <Typography
-                style={{ marginBottom: 20 }}
-                variant="body2"
-                color="text.secondary"
-                gutterBottom
-              >
-                Insert Your Document Details
-              </Typography>
-              <BorrowingDocument />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ p: 3 }}>
-              <Typography variant="h6" gutterBottom>
-                Borrower Details
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                gutterBottom
-                style={{ marginBottom: 20 }}
-              >
-                Insert Your Borrower Details
-              </Typography>
-              <BorrowerInformation />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper sx={{ p: 3 }}>
-              <Typography variant="h6" gutterBottom>
+        <Grid2 container spacing={3} sx={{ p: 3 }}>
+          <Grid2 size={6}>
+            <Typography variant="h6" gutterBottom>
+              Document Details
+            </Typography>
+            <Typography
+              style={{ marginBottom: 20 }}
+              variant="body2"
+              color="text.secondary"
+              gutterBottom
+            >
+              Insert Your Document Details
+            </Typography>
+            <BorrowingDocument />
+          </Grid2>
+          <Grid2 size={6}>
+            <Typography variant="h6" gutterBottom>
+              Borrower Details
+            </Typography>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              gutterBottom
+              style={{ marginBottom: 20 }}
+            >
+              Insert Your Borrower Details
+            </Typography>
+            <BorrowerInformation />
+          </Grid2>
+          <Grid2 size={12}>
+            <Typography variant="h6" gutterBottom>
               Equipment List
-              </Typography>
-              <Typography variant="body2" color="text.secondary" gutterBottom>
+            </Typography>
+            <Typography variant="body2" color="text.secondary" gutterBottom>
               Insert Your Borrower Equipment List
-              </Typography>
-              <BorrowedEquipmentList />
-              <EquipmentTable/>
-              <SummaryPrice/>
-              <Box sx={{ mt: 3, display: "flex", justifyContent: "flex-end" }}>
-                <Button variant="contained" color="primary" sx={{ mr: 1 }}>
-                  Add Document
-                </Button>
-                <Button variant="contained" color="secondary" sx={{ mr: 1 }}>
-                  Add & Download Document 
-                </Button>
-                <Button variant="outlined">Cancel</Button>
-              </Box>
-            </Paper>
-          </Grid>
-        </Grid>
+            </Typography>
+            <BorrowedEquipmentList />
+            <EquipmentTable />
+            <SummaryPrice />
+            <Box sx={{ mt: 3, display: "flex", justifyContent: "flex-end" }}>
+              <Button variant="contained" color="primary" sx={{ mr: 1 }}>
+                Add Document
+              </Button>
+              <Button variant="contained" color="secondary" sx={{ mr: 1 }}>
+                Add & Download Document
+              </Button>
+              <Button variant="outlined">Cancel</Button>
+            </Box>
+          </Grid2>
+        </Grid2>
 
         {/* Add other TabPanels for Notifications, Bills, and Security if needed */}
       </DashboardCard>

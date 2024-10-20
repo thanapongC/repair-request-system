@@ -1,38 +1,53 @@
-'use client'
-import { Grid, Box } from '@mui/material';
-import PageContainer from '@/components/container/PageContainer';
-import GreetingCard from '@/components/shared/GreetingCard';
-import EarningsCard from '@/components/shared/EarningsCard';
-import MonthlyFixCard from '@/components/shared/MonthlyFixCard';
-import OverviewChart from '@/components/shared/OverviewChart';
-import SalesOverview from '@/components/shared/SalesOverview';
-import DailyActivity from '@/components/shared/DailyActivity';
-import ProductPerformance from '@/components/shared/ProductPerformance';
+"use client";
+import { Grid, Box, Grid2 } from "@mui/material";
+import PageContainer from "@/components/container/PageContainer";
+import GreetingCard from "@/components/shared/GreetingCard";
+import EarningsCard from "@/components/shared/EarningsCard_old";
+import MonthlyFixCard from "@/components/shared/MonthlyFixCard";
+import OverviewChart from "@/components/shared/OverviewChart";
+import SalesOverview from "@/components/shared/RentalIncomeOverview";
+import DailyActivity from "@/components/shared/DailyActivity";
+import PendingDocuments from "@/components/shared/PendingDocuments";
+import RepairOverview from "@/components/shared/RepairOverview";
+import HelloCard from "@/components/shared/HelloCart";
+import EquipmentWaitingRepair from "@/components/shared/EquipmentWaitingRepair";
+import EquipmentNearDueforReturn from "@/components/shared/EquipmentNearDueforReturn";
 // components
-
 
 const Dashboard = () => {
   return (
     <PageContainer title="Dashboard" description="this is Dashboard">
-    <Box mt={3}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} lg={12}>
-          <SalesOverview />
-        </Grid>
-        {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4}>
-          <DailyActivity />
-        </Grid>
-        <Grid item xs={12} lg={8}>
-          <ProductPerformance />
-        </Grid>
-        {/* <Grid item xs={12} lg={12}>
-          <BlogCard />
-        </Grid> */}
-      </Grid>
-    </Box>
-  </PageContainer>
-  )
-}
+      <Box mt={3}>
+        <Grid2 container spacing={3}>
+          <Grid2 container size={5} spacing={2}>
+            <Grid2 size={12}>
+              <HelloCard name="Super Admin"/>
+            </Grid2>
+            <Grid2 container size={12}>
+              <Grid2 size={6}>
+                <EarningsCard amount={283940} label="Monthly revenue"/>
+              </Grid2>
+              <Grid2 size={6}>
+                <EquipmentWaitingRepair count={12}/>
+              </Grid2>
+            </Grid2>
+          </Grid2>
+          <Grid2 size={7}>
+            <SalesOverview />
+          </Grid2>
+          <Grid2 size={4}>
+            <RepairOverview />
+          </Grid2>
+          <Grid2 size={8}>
+            <PendingDocuments />
+          </Grid2>
+          <Grid2 size={12}>
+          <EquipmentNearDueforReturn />
+        </Grid2>
+        </Grid2>
+      </Box>
+    </PageContainer>
+  );
+};
 
 export default Dashboard;

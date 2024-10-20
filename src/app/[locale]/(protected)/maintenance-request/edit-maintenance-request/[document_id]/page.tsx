@@ -1,5 +1,5 @@
 "use client";
-import { Grid, Box, Button, Typography, Paper, Grid2 } from "@mui/material";
+import { Grid, Box, Button, Typography, Paper } from "@mui/material";
 import PageContainer from "@/components/container/PageContainer";
 
 // components
@@ -10,17 +10,21 @@ import BorrowerInformation from "@/components/forms/BorrowerInformation";
 import BorrowedEquipmentList from "@/components/forms/NewBorrowedEquipment";
 import EquipmentTable from "@/components/forms/tables/EquipmentTable";
 import SummaryPrice from "@/components/forms/SummaryPrice";
+import MAApprove from "@/components/forms/MAApprove";
+import MaintenanceDocument from "@/components/forms/MADocumentDetails";
+import EquipmentRepairForm from "@/components/forms/EquipmentRepairForm";
+import RepairLocationForm from "@/components/forms/RepairLocationForm";
 
-const BorrowingPage = () => {
+const MaintenancePage = () => {
   return (
     <PageContainer>
       <Breadcrumb />
       <DashboardCard>
-        <Grid2 container spacing={3} sx={{ p: 3 }}>
-          <Grid2 size={6}>
+        <Grid container spacing={3} sx={{ p: 3 }}>
+          <Grid item xs={12} md={6}>
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
-                Document Details
+                MA-Document Details
               </Typography>
               <Typography
                 style={{ marginBottom: 20 }}
@@ -28,15 +32,15 @@ const BorrowingPage = () => {
                 color="text.secondary"
                 gutterBottom
               >
-                Insert Your Document Details
+                Insert Your MA-Document Details
               </Typography>
-              <BorrowingDocument />
+              <MaintenanceDocument />
             </Paper>
-          </Grid2>
-          <Grid2 size={6}>
+          </Grid>
+          <Grid item xs={12} md={6}>
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
-                Borrower Details
+                Repair Location
               </Typography>
               <Typography
                 variant="body2"
@@ -44,34 +48,29 @@ const BorrowingPage = () => {
                 gutterBottom
                 style={{ marginBottom: 20 }}
               >
-                Insert Your Borrower Details
+                Insert Your Repair Location
               </Typography>
-              <BorrowerInformation />
+              <RepairLocationForm />
             </Paper>
-          </Grid2>
-          <Grid2 size={12}>
+          </Grid>
+          <Grid item xs={12}>
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
-              Equipment List
+                Equipment List
               </Typography>
               <Typography variant="body2" color="text.secondary" gutterBottom>
-              Insert Your Borrower Equipment List
+                Insert Your Equipment List
               </Typography>
-              <BorrowedEquipmentList />
-              <EquipmentTable/>
-              <SummaryPrice/>
+              <EquipmentRepairForm/>
               <Box sx={{ mt: 3, display: "flex", justifyContent: "flex-end" }}>
                 <Button variant="contained" color="primary" sx={{ mr: 1 }}>
-                  Add Document
-                </Button>
-                <Button variant="contained" color="secondary" sx={{ mr: 1 }}>
-                  Add & Download Document 
+                  Add MA-Document
                 </Button>
                 <Button variant="outlined">Cancel</Button>
               </Box>
             </Paper>
-          </Grid2>
-        </Grid2>
+          </Grid>
+        </Grid>
 
         {/* Add other TabPanels for Notifications, Bills, and Security if needed */}
       </DashboardCard>
@@ -79,4 +78,4 @@ const BorrowingPage = () => {
   );
 };
 
-export default BorrowingPage;
+export default MaintenancePage;

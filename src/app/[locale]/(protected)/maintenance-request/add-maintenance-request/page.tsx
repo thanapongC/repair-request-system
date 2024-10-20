@@ -1,5 +1,5 @@
 "use client";
-import { Grid, Box, Button, Typography, Paper } from "@mui/material";
+import { Grid, Box, Button, Typography, Paper, Grid2 } from "@mui/material";
 import PageContainer from "@/components/container/PageContainer";
 
 // components
@@ -20,57 +20,51 @@ const MaintenancePage = () => {
     <PageContainer>
       <Breadcrumb />
       <DashboardCard>
-        <Grid container spacing={3} sx={{ p: 3 }}>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ p: 3 }}>
-              <Typography variant="h6" gutterBottom>
-                MA-Document Details
-              </Typography>
-              <Typography
-                style={{ marginBottom: 20 }}
-                variant="body2"
-                color="text.secondary"
-                gutterBottom
-              >
-                Insert Your MA-Document Details
-              </Typography>
-              <MaintenanceDocument />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper sx={{ p: 3 }}>
-              <Typography variant="h6" gutterBottom>
-                Repair Location
-              </Typography>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                gutterBottom
-                style={{ marginBottom: 20 }}
-              >
-                Insert Your Repair Location
-              </Typography>
-              <RepairLocationForm />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper sx={{ p: 3 }}>
-              <Typography variant="h6" gutterBottom>
-                Equipment List
-              </Typography>
-              <Typography variant="body2" color="text.secondary" gutterBottom>
-                Insert Your Equipment List
-              </Typography>
-              <EquipmentRepairForm/>
-              <Box sx={{ mt: 3, display: "flex", justifyContent: "flex-end" }}>
-                <Button variant="contained" color="primary" sx={{ mr: 1 }}>
-                  Add MA-Document
-                </Button>
-                <Button variant="outlined">Cancel</Button>
-              </Box>
-            </Paper>
-          </Grid>
-        </Grid>
+        <Grid2 container spacing={3} sx={{ p: 3 }}>
+          <Grid2 size={6}>
+            <Typography variant="h6" gutterBottom>
+              MA-Document Details
+            </Typography>
+            <Typography
+              style={{ marginBottom: 20 }}
+              variant="body2"
+              color="text.secondary"
+              gutterBottom
+            >
+              Insert Your MA-Document Details
+            </Typography>
+            <MaintenanceDocument />
+          </Grid2>
+          <Grid2 size={6}>
+            <Typography variant="h6" gutterBottom>
+              Repair Location
+            </Typography>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              gutterBottom
+              style={{ marginBottom: 20 }}
+            >
+              Insert Your Repair Location
+            </Typography>
+            <RepairLocationForm />
+          </Grid2>
+          <Grid2 size={12}>
+            <Typography variant="h6" gutterBottom>
+              Equipment List
+            </Typography>
+            <Typography variant="body2" color="text.secondary" gutterBottom>
+              Insert Your Equipment List
+            </Typography>
+            <EquipmentRepairForm />
+            <Box sx={{ mt: 3, display: "flex", justifyContent: "flex-end" }}>
+              <Button variant="contained" color="primary" sx={{ mr: 1 }}>
+                Add MA-Document
+              </Button>
+              <Button variant="outlined">Cancel</Button>
+            </Box>
+          </Grid2>
+        </Grid2>
 
         {/* Add other TabPanels for Notifications, Bills, and Security if needed */}
       </DashboardCard>

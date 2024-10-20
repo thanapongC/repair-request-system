@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import dynamic from "next/dynamic";
-import BaseCard from "../shared/DashboardCard";
+import BaseCard from "./DashboardCard";
+import { FormControl, Grid2, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
@@ -9,6 +10,8 @@ const SalesOverview = () => {
   const theme = useTheme();
   const primary = theme.palette.primary.main;
   const secondary = theme.palette.secondary.main;
+
+  const [yearSelect, setYearSelect] = useState("2024");
 
   const optionssalesoverview: any = {
     grid: {
@@ -102,20 +105,42 @@ const SalesOverview = () => {
     {
       name: "Ample Admin",
       data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350, 390, 180],
-    },
-    {
-      name: "Pixel Admin",
-      data: [280, 250, 325, 215, 250, 310, 280, 250, 325, 215, 250, 310],
-    },
+    }
   ];
   return (
-    <BaseCard title="Sales Overview">
-      <Chart
-        options={optionssalesoverview}
-        series={seriessalesoverview}
-        type="bar"
-        height="295px"
-      />
+    <BaseCard>
+      <Grid2 container>
+        <Grid2 container size={12}>
+          <Grid2 size={9}>
+            <Typography variant="h3">Rental Income 2024 Overview</Typography>
+          </Grid2>
+          <Grid2 size={3}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Year</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={yearSelect}
+                label="year"
+                // onChange={handleChange}
+              >
+                <MenuItem value={"2024"}>2024</MenuItem>
+                <MenuItem value={"2023"}>2023</MenuItem>
+                <MenuItem value={"2022"}>2022</MenuItem>
+                <MenuItem value={"2021"}>2021</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid2>
+        </Grid2>
+        <Grid2 size={12}>
+          <Chart
+            options={optionssalesoverview}
+            series={seriessalesoverview}
+            type="bar"
+            height="295px"
+          />
+        </Grid2>
+      </Grid2>
     </BaseCard>
   );
 };
