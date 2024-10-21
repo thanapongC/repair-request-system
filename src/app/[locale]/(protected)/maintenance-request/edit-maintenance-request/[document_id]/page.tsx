@@ -18,7 +18,14 @@ import RepairLocationForm from "@/components/forms/RepairLocationForm";
 const MaintenancePage = () => {
   return (
     <PageContainer>
-      <Breadcrumb />
+                              <Breadcrumb
+        title="Edit Maintenance Requests"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "Maintenance Requests", href: "/maintenance-request" },
+          { name: "Edit Maintenance Request" },
+        ]}
+      />
       <DashboardCard>
         <Grid container spacing={3} sx={{ p: 3 }}>
           <Grid item xs={12} md={6}>

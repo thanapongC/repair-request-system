@@ -102,7 +102,7 @@ const RepairOverview: React.FC = () => {
           options={chartOptions}
           series={series}
           type="donut"
-          height={250}
+          // height={250}
         />
         <div
           style={{

@@ -68,7 +68,13 @@ const UserManagementPage = () => {
 
   return (
     <PageContainer title="Dashboard" description="this is Dashboard">
-      <Breadcrumb />
+      <Breadcrumb
+        title="Users Management"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "All Users" },
+        ]}
+      />
       <BaseCard title="Users Filter">
         <Grid2
           direction="row"
@@ -118,7 +124,9 @@ const UserManagementPage = () => {
                 <MenuItem value={"in-progress"}>Technician</MenuItem>
                 <MenuItem value={"in-progress"}>Officer/Manager</MenuItem>
                 <MenuItem value={"in-progress"}>Employee</MenuItem>
-                <MenuItem value={"returned-partially"}>Maintenance/ Repair Technician</MenuItem>
+                <MenuItem value={"returned-partially"}>
+                  Maintenance/ Repair Technician
+                </MenuItem>
               </Select>
             </FormControl>
           </Grid2>

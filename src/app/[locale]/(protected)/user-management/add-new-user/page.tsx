@@ -12,7 +12,14 @@ import Breadcrumb from "@/components/shared/BreadcrumbCustom";
 const Dashboard = () => {
   return (
     <PageContainer>
-      <Breadcrumb />
+      <Breadcrumb
+        title="Add New User"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "Users Management", href: "/user-management" },
+          { name: "Add New User" },
+        ]}
+      />
       <DashboardCard>
         <Grid container spacing={3} sx={{ p: 3 }}>
           <Grid item xs={12} md={6}>
@@ -36,7 +43,6 @@ const Dashboard = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper sx={{ p: 3 }}>
-
               <Typography variant="h6" gutterBottom>
                 Authen Setting
               </Typography>

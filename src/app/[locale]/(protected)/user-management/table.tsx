@@ -325,7 +325,7 @@ const UserTable: React.FC = () => {
   };
 
   const handleEdit = (keyId: string) => {
-    router.push(`/maintenance-request/edit-maintenance-request/MA001`);
+    router.push(`/user-management/edit-profile/user-1`);
     // router.push(`/user-management/edit-profile/${keyId}`)
   };
 

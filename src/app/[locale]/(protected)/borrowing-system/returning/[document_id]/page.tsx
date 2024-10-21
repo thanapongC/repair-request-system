@@ -16,7 +16,14 @@ import EquipmentReturnTable from "@/components/forms/tables/EquipmentReturnTable
 const LendingPage = () => {
   return (
     <PageContainer>
-      <Breadcrumb />
+      <Breadcrumb
+        title="Returning"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "Borrowing-Returning", href: "/borrowing-system" },
+          { name: "Returning" },
+        ]}
+      />
       <DashboardCard>
         <Grid2 container spacing={3} sx={{ p: 3 }}>
           <Grid2 size={6}>

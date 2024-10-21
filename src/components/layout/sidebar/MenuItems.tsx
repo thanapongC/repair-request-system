@@ -1,21 +1,10 @@
+import { CollectionsBookmark, Group, Handyman } from "@mui/icons-material";
 import {
-  IconBoxMultiple,
-  IconCircleDot,
   IconHome,
-  IconInfoCircle,
-  IconLayout,
-  IconLayoutGrid,
-  IconPhoto,
-  IconPoint,
-  IconStar,
-  IconTable,
-  IconUser,
 } from "@tabler/icons-react";
 
 import { uniqueId } from "lodash";
 import { useTranslations, useLocale } from "next-intl";
-
-
 
 export const useMenuItems = () => {
   
@@ -32,7 +21,7 @@ export const useMenuItems = () => {
     {
       id: uniqueId(),
       title: t("menu2"),
-      icon: IconHome,
+      icon: CollectionsBookmark,
       href: `/${localActive}/borrowing-system`,
       children: [
         {
@@ -55,7 +44,7 @@ export const useMenuItems = () => {
     {
       id: uniqueId(),
       title: t("menu3"),
-      icon: IconHome,
+      icon: Handyman,
       href: `/${localActive}/maintenance-request`,
       children: [
         {
@@ -78,7 +67,7 @@ export const useMenuItems = () => {
     {
       id: uniqueId(),
       title: t("menu4"),
-      icon: IconHome,
+      icon: Group,
       href: `/${localActive}/user-management`,
       children: [
         {

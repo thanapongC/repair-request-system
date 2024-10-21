@@ -14,7 +14,14 @@ import SummaryPrice from "@/components/forms/SummaryPrice";
 const BorrowingPage = () => {
   return (
     <PageContainer>
-      <Breadcrumb />
+      <Breadcrumb
+        title="Edit Borrowing Document"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "Borrowing-Returning", href: "/borrowing-system" },
+          { name: "Edit Borrowing Document" },
+        ]}
+      />
       <DashboardCard>
         <Grid2 container spacing={3} sx={{ p: 3 }}>
           <Grid2 size={6}>
@@ -52,20 +59,20 @@ const BorrowingPage = () => {
           <Grid2 size={12}>
             <Paper sx={{ p: 3 }}>
               <Typography variant="h6" gutterBottom>
-              Equipment List
+                Equipment List
               </Typography>
               <Typography variant="body2" color="text.secondary" gutterBottom>
-              Insert Your Borrower Equipment List
+                Insert Your Borrower Equipment List
               </Typography>
               <BorrowedEquipmentList />
-              <EquipmentTable/>
-              <SummaryPrice/>
+              <EquipmentTable />
+              <SummaryPrice />
               <Box sx={{ mt: 3, display: "flex", justifyContent: "flex-end" }}>
                 <Button variant="contained" color="primary" sx={{ mr: 1 }}>
                   Add Document
                 </Button>
                 <Button variant="contained" color="secondary" sx={{ mr: 1 }}>
-                  Add & Download Document 
+                  Add & Download Document
                 </Button>
                 <Button variant="outlined">Cancel</Button>
               </Box>

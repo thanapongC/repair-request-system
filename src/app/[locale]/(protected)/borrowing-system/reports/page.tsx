@@ -35,8 +35,14 @@ const BorrowReportPage = () => {
 
   return (
     <PageContainer title="Dashboard" description="this is Dashboard">
-      <Breadcrumb />
-
+      <Breadcrumb
+        title="Borrowing-Returning Reports"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "Borrowing-Returning", href: "/borrowing-system" },
+          { name: "Borrowing-Returning Reports" },
+        ]}
+      />
       <BaseCard title="Borrowing Reports">
         <Box mt={3}>
           <Grid2 container spacing={3}>

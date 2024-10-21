@@ -2,12 +2,17 @@ import React from 'react';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
-const Breadcrumb = () => {
+interface BreadcrumbProps {
+  title: string;
+  breadcrumbs?: { name: string; href?: string }[];
+}
+
+const BreadcrumbCustom: React.FC<BreadcrumbProps> = ({ title, breadcrumbs = [] }) => {
   return (
     <div>
       {/* Title */}
       <Typography variant="h4" gutterBottom>
-        Account Setting
+        {title}
       </Typography>
       
       {/* Breadcrumbs */}
@@ -16,13 +21,25 @@ const Breadcrumb = () => {
         aria-label="breadcrumb"
         sx={{ marginBottom: 2 }} // Add some margin below
       >
-        <Link underline="hover" color="inherit" href="/">
-          Home
-        </Link>
-        <Typography color="text.primary">Account Setting</Typography>
+        {breadcrumbs.map((breadcrumb, index) =>
+          breadcrumb.href ? (
+            <Link
+              key={index}
+              underline="hover"
+              color="inherit"
+              href={breadcrumb.href}
+            >
+              {breadcrumb.name}
+            </Link>
+          ) : (
+            <Typography key={index} color="text.primary">
+              {breadcrumb.name}
+            </Typography>
+          )
+        )}
       </Breadcrumbs>
     </div>
   );
 };
 
-export default Breadcrumb;
+export default BreadcrumbCustom;

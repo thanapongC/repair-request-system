@@ -27,7 +27,14 @@ import UserAuthenForm from "@/components/forms/UserSettingsAuthenForm";
 const AccountSettings: NextPage = () => {
   return (
     <PageContainer>
-      <Breadcrumb />
+      <Breadcrumb
+        title="Edit Profile"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "Users Management", href: "/user-management" },
+          { name: "Edit Profile" },
+        ]}
+      />
       <DashboardCard>
         <Grid container spacing={3} sx={{ p: 3 }}>
           <Grid item xs={12} md={6}>
@@ -51,7 +58,6 @@ const AccountSettings: NextPage = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Paper sx={{ p: 3 }}>
-
               <Typography variant="h6" gutterBottom>
                 Authen Setting
               </Typography>

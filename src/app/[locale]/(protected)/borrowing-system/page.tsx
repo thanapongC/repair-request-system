@@ -41,7 +41,13 @@ const BorrowPage = () => {
 
   return (
     <PageContainer title="Dashboard" description="this is Dashboard">
-      <Breadcrumb />
+      <Breadcrumb
+        title="Borrowing-Returning"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "All Document" },
+        ]}
+      />
       <BaseCard title="Borrowing Filter">
         <Grid2
           direction="row"
@@ -50,18 +56,10 @@ const BorrowPage = () => {
           sx={{ background: "#fff" }}
         >
           <Grid2 size={3}>
-            <TextField
-              label="Document ID (optional)"
-              type="text"
-              fullWidth
-            />
+            <TextField label="Document ID (optional)" type="text" fullWidth />
           </Grid2>
           <Grid2 size={3}>
-            <TextField
-              label="Site Name (optional)"
-              type="text"
-              fullWidth
-            />
+            <TextField label="Site Name (optional)" type="text" fullWidth />
           </Grid2>
 
           <Grid2 size={3}>
@@ -72,11 +70,7 @@ const BorrowPage = () => {
             />
           </Grid2>
           <Grid2 size={3}>
-            <TextField
-              label="Borrower Name (optional)"
-              type="text"
-              fullWidth
-            />
+            <TextField label="Borrower Name (optional)" type="text" fullWidth />
           </Grid2>
           <Grid2 size={3}>
             <FormControl fullWidth>
@@ -88,21 +82,29 @@ const BorrowPage = () => {
                 label="Status"
                 // onChange={handleChange}
               >
-                <MenuItem value={'all-status'}>All Status</MenuItem>
-                <MenuItem value={'borrowed'}>borrowed</MenuItem>
-                <MenuItem value={'returned'}>returned</MenuItem>
-                <MenuItem value={'damaged'}>damaged</MenuItem>
-                <MenuItem value={'in-progress'}>in-progress</MenuItem>
-                <MenuItem value={'returned-partially'}>in-progress</MenuItem>
-                <MenuItem value={'overdue'}>overdue</MenuItem>
+                <MenuItem value={"all-status"}>All Status</MenuItem>
+                <MenuItem value={"borrowed"}>borrowed</MenuItem>
+                <MenuItem value={"returned"}>returned</MenuItem>
+                <MenuItem value={"damaged"}>damaged</MenuItem>
+                <MenuItem value={"in-progress"}>in-progress</MenuItem>
+                <MenuItem value={"returned-partially"}>in-progress</MenuItem>
+                <MenuItem value={"overdue"}>overdue</MenuItem>
               </Select>
             </FormControl>
           </Grid2>
           <Grid2 size={3}>
-            <Button variant="contained" color="success" sx={{  width: '59%', height: '100%' }}>
+            <Button
+              variant="contained"
+              color="success"
+              sx={{ width: "59%", height: "100%" }}
+            >
               Search
             </Button>
-            <Button variant="contained" color="warning" sx={{ ml: 1, width: '37%', height: '100%' }}>
+            <Button
+              variant="contained"
+              color="warning"
+              sx={{ ml: 1, width: "37%", height: "100%" }}
+            >
               Clear All
             </Button>
           </Grid2>

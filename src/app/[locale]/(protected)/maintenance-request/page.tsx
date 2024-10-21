@@ -24,7 +24,13 @@ const BorrowPage = () => {
 
   return (
     <PageContainer title="Dashboard" description="this is Dashboard">
-      <Breadcrumb />
+      <Breadcrumb
+        title="Maintenance Requests"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "All Maintenance Requests" },
+        ]}
+      />
       <BaseCard title="Maintenance Filter">
         <Grid2
           direction="row"

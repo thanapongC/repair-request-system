@@ -24,7 +24,12 @@ import ChangePasswordForm from "@/components/forms/PasswordChangeForm";
 const ChangePasswordPage: NextPage = () => {
   return (
     <PageContainer>
-      <Breadcrumb />
+            <Breadcrumb title="Change Password"
+      breadcrumbs={[
+        { name: "Home", href: "/dashboard" },
+        { name: "Users Management", href: "/user-management" },
+        { name: "Change Password" }
+      ]}/>
       <DashboardCard>
         <Grid container spacing={3} sx={{ p: 3 }}>
           <Grid item xs={12} >

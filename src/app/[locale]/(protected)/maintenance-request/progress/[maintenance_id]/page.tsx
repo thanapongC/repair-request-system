@@ -95,7 +95,14 @@ export default function HorizontalLinearStepper() {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Breadcrumb />
+                              <Breadcrumb
+        title="Update Maintenance Requests"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "Maintenance Requests", href: "/maintenance-request" },
+          { name: "Update Maintenance Request" },
+        ]}
+      />
       <Box mt={5} p={3} border="1px solid #ccc" borderRadius="8px">
         Read Document (MA001) --- (*You Can Read Document Details Here)
         <Button

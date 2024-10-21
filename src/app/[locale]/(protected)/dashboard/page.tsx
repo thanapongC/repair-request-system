@@ -1,12 +1,8 @@
 "use client";
 import { Grid, Box, Grid2 } from "@mui/material";
 import PageContainer from "@/components/container/PageContainer";
-import GreetingCard from "@/components/shared/GreetingCard";
 import EarningsCard from "@/components/shared/EarningsCard_old";
-import MonthlyFixCard from "@/components/shared/MonthlyFixCard";
-import OverviewChart from "@/components/shared/OverviewChart";
 import SalesOverview from "@/components/shared/RentalIncomeOverview";
-import DailyActivity from "@/components/shared/DailyActivity";
 import PendingDocuments from "@/components/shared/PendingDocuments";
 import RepairOverview from "@/components/shared/RepairOverview";
 import HelloCard from "@/components/shared/HelloCart";

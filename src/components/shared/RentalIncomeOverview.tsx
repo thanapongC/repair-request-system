@@ -137,7 +137,7 @@ const SalesOverview = () => {
             options={optionssalesoverview}
             series={seriessalesoverview}
             type="bar"
-            height="295px"
+            // height="295px"
           />
         </Grid2>
       </Grid2>

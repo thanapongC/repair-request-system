@@ -27,7 +27,14 @@ const MAReportPage = () => {
 
   return (
     <PageContainer title="Dashboard" description="this is Dashboard">
-      <Breadcrumb />
+      <Breadcrumb
+        title="Maintenance Reports"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "Maintenance Requests", href: "/maintenance-request" },
+          { name: "Maintenance Reports" },
+        ]}
+      />
 
       <BaseCard title="Maintenance Reports">
         <Box mt={3}>

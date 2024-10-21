@@ -14,7 +14,14 @@ import SummaryPrice from "@/components/forms/SummaryPrice";
 const BorrowingPage = () => {
   return (
     <PageContainer>
-      <Breadcrumb />
+      <Breadcrumb
+        title="Add Borrowing Document"
+        breadcrumbs={[
+          { name: "Home", href: "/dashboard" },
+          { name: "Borrowing-Returning", href: "/borrowing-system" },
+          { name: "Add Borrowing Document" },
+        ]}
+      />
       <DashboardCard>
         <Grid2 container spacing={3} sx={{ p: 3 }}>
           <Grid2 size={6}>
